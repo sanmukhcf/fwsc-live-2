@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe, Settings, ArrowRight, ShieldAlert, Clock, CheckCircle2, AlertTriangle, RotateCcw } from 'lucide-react';
 import type { AuditErrorDetails } from '../types';
+import { safeString } from '../utils/formatError';
 
 interface AuditInputProps {
   onStartAudit: (url: string, maxPages: number) => void;
@@ -130,7 +131,7 @@ export const AuditInput: React.FC<AuditInputProps> = ({
                       </span>
                     </div>
                     <p className="text-xs text-amber-900 font-normal mt-1 leading-relaxed">
-                      {errorDetails?.message || 'The website domain exists and is reachable, but the server temporarily throttled automated crawler requests.'}
+                      {safeString(errorDetails?.message, 'The website domain exists and is reachable, but the server temporarily throttled automated crawler requests.')}
                     </p>
                   </div>
                 </div>
@@ -173,15 +174,15 @@ export const AuditInput: React.FC<AuditInputProps> = ({
                   <ShieldAlert className="w-5 h-5 shrink-0 text-red-600 mt-0.5" />
                   <div className="flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span>{errorDetails?.errorType || 'Audit Could Not Proceed'}</span>
+                      <span>{safeString(errorDetails?.errorType, 'Audit Could Not Proceed')}</span>
                       {errorDetails?.reason && (
                         <span className="font-mono text-[11px] px-2 py-0.5 bg-red-100 text-red-800 rounded font-bold border border-red-200">
-                          {errorDetails.reason}
+                          {safeString(errorDetails.reason)}
                         </span>
                       )}
                     </div>
                     <p className="text-xs text-red-700 font-normal mt-1 leading-relaxed">
-                      {localError || errorDetails?.message || error}
+                      {safeString(localError || errorDetails?.message || error, 'The website audit could not be performed.')}
                     </p>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import type { AuditErrorDetails, CrawlProgress, AuditResult } from '../types';
+import { formatErrorMessage, safeString } from './formatError';
 
 export interface ApiResponse<T> {
   ok: boolean;
@@ -51,20 +52,25 @@ export async function streamAuditCrawl(
         // Non-JSON error
       }
 
-      const errorMsg =
-        errJson?.error ||
-        errJson?.message ||
-        (res.status === 404
+      const defaultError =
+        res.status === 404
           ? 'Audit API route was not found (HTTP 404). Please verify API deployment.'
-          : `Server returned HTTP ${res.status} (${res.statusText || 'Error'})`);
+          : `Server returned HTTP ${res.status} (${res.statusText || 'Error'})`;
 
-      const details: AuditErrorDetails = errJson?.errorDetails || {
-        type: 'crawl_error',
-        errorType: errJson?.errorType || `HTTP Error ${res.status}`,
-        reason: errJson?.reason || `HTTP_${res.status}`,
-        message: errorMsg,
-        url: targetUrl,
-        statusCode: res.status,
+      const errorMsg = formatErrorMessage(
+        errJson?.error || errJson?.message || errJson,
+        defaultError
+      );
+
+      const rawDetails = errJson?.errorDetails || {};
+      const details: AuditErrorDetails = {
+        type: (rawDetails.type as any) || 'crawl_error',
+        errorType: safeString(rawDetails.errorType || errJson?.errorType, `HTTP Error ${res.status}`),
+        reason: safeString(rawDetails.reason || errJson?.reason || errJson?.code, `HTTP_${res.status}`),
+        message: safeString(rawDetails.message || errorMsg, errorMsg),
+        url: safeString(rawDetails.url || targetUrl, targetUrl),
+        statusCode: typeof rawDetails.statusCode === 'number' ? rawDetails.statusCode : res.status,
+        canRetry: rawDetails.canRetry !== false,
       };
 
       callbacks.onError(errorMsg, details);
@@ -105,7 +111,17 @@ export async function streamAuditCrawl(
               callbacks.onComplete(parsed.result);
             } else if (parsed.type === 'failed') {
               completedOrFailed = true;
-              callbacks.onError(parsed.error || 'Audit crawl failed.', parsed.errorDetails);
+              const errText = formatErrorMessage(parsed.error, 'Audit crawl failed.');
+              const rawDetails = parsed.errorDetails || {};
+              callbacks.onError(errText, {
+                type: (rawDetails.type as any) || 'crawl_error',
+                errorType: safeString(rawDetails.errorType, 'Audit Failed'),
+                reason: safeString(rawDetails.reason, 'CRAWL_FAILED'),
+                message: safeString(rawDetails.message, errText),
+                url: safeString(rawDetails.url, targetUrl),
+                statusCode: rawDetails.statusCode,
+                canRetry: rawDetails.canRetry !== false,
+              });
             }
           } catch {
             // Ignore non-JSON heartbeat lines
@@ -123,7 +139,17 @@ export async function streamAuditCrawl(
             callbacks.onComplete(parsed.result);
           } else if (parsed.type === 'failed') {
             completedOrFailed = true;
-            callbacks.onError(parsed.error || 'Audit crawl failed.', parsed.errorDetails);
+            const errText = formatErrorMessage(parsed.error, 'Audit crawl failed.');
+            const rawDetails = parsed.errorDetails || {};
+            callbacks.onError(errText, {
+              type: (rawDetails.type as any) || 'crawl_error',
+              errorType: safeString(rawDetails.errorType, 'Audit Failed'),
+              reason: safeString(rawDetails.reason, 'CRAWL_FAILED'),
+              message: safeString(rawDetails.message, errText),
+              url: safeString(rawDetails.url, targetUrl),
+              statusCode: rawDetails.statusCode,
+              canRetry: rawDetails.canRetry !== false,
+            });
           }
         } catch {
           // Ignore
@@ -142,8 +168,18 @@ export async function streamAuditCrawl(
           callbacks.onComplete(parsed.result);
           return;
         }
-        if (parsed.status === 'failed') {
-          callbacks.onError(parsed.error || 'Audit failed.', parsed.errorDetails);
+        if (parsed.status === 'failed' || parsed.error) {
+          const errText = formatErrorMessage(parsed.error || parsed.message, 'Audit failed.');
+          const rawDetails = parsed.errorDetails || {};
+          callbacks.onError(errText, {
+            type: (rawDetails.type as any) || 'crawl_error',
+            errorType: safeString(rawDetails.errorType, 'Audit Failed'),
+            reason: safeString(rawDetails.reason, 'CRAWL_FAILED'),
+            message: safeString(rawDetails.message, errText),
+            url: safeString(rawDetails.url, targetUrl),
+            statusCode: rawDetails.statusCode,
+            canRetry: rawDetails.canRetry !== false,
+          });
           return;
         }
       } catch {
@@ -156,13 +192,14 @@ export async function streamAuditCrawl(
       return;
     }
 
-    const message = err?.message || 'Failed to establish connection to audit server.';
+    const message = formatErrorMessage(err, 'Failed to establish connection to audit server.');
     callbacks.onError(message, {
       type: 'unreachable',
       errorType: 'Network Error',
       reason: 'NETWORK_ERROR',
       message,
       url: targetUrl,
+      canRetry: true,
     });
   }
 }
@@ -243,18 +280,18 @@ export async function safeFetchJson<T = any>(
         const parsed = JSON.parse(trimmedText);
 
         if (!res.ok) {
-          const errorMsg =
-            parsed.error ||
-            parsed.message ||
-            `Request failed with HTTP status ${res.status} (${res.statusText || 'Error'})`;
+          const defaultMsg = `Request failed with HTTP status ${res.status} (${res.statusText || 'Error'})`;
+          const errorMsg = formatErrorMessage(parsed.error || parsed.message || parsed, defaultMsg);
 
-          const details: AuditErrorDetails = parsed.errorDetails || {
-            type: 'crawl_error',
-            errorType: parsed.errorType || `HTTP Error ${res.status}`,
-            reason: parsed.reason || `HTTP_${res.status}`,
-            message: errorMsg,
-            url: parsed.url || fullUrl,
-            statusCode: res.status,
+          const rawDetails = parsed.errorDetails || {};
+          const details: AuditErrorDetails = {
+            type: (rawDetails.type as any) || 'crawl_error',
+            errorType: safeString(rawDetails.errorType || parsed.errorType, `HTTP Error ${res.status}`),
+            reason: safeString(rawDetails.reason || parsed.reason || parsed.code, `HTTP_${res.status}`),
+            message: safeString(rawDetails.message || errorMsg, errorMsg),
+            url: safeString(rawDetails.url || parsed.url || fullUrl, fullUrl),
+            statusCode: typeof rawDetails.statusCode === 'number' ? rawDetails.statusCode : res.status,
+            canRetry: rawDetails.canRetry !== false,
           };
 
           return {

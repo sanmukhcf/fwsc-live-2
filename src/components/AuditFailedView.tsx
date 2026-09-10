@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlertCircle, RefreshCw, ArrowLeft, Globe, HelpCircle, ShieldAlert, WifiOff } from 'lucide-react';
 import type { AuditErrorDetails } from '../types';
+import { safeString } from '../utils/formatError';
 
 interface AuditFailedViewProps {
   url: string;
@@ -73,7 +74,7 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
                   AUDIT FAILED
                 </span>
                 <span className={`px-2.5 py-0.5 rounded text-xs font-bold border ${badge.color}`}>
-                  {badge.label}
+                  {safeString(badge.label)}
                 </span>
               </div>
               <h2 className="font-['Poppins'] text-2xl font-bold text-[#000000]">
@@ -81,7 +82,7 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
               </h2>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-[#666666] mt-1 font-mono">
                 <Globe className="w-3.5 h-3.5 text-[#888888]" />
-                <span className="truncate max-w-sm">{url}</span>
+                <span className="truncate max-w-sm">{safeString(url)}</span>
               </div>
             </div>
           </div>
@@ -93,7 +94,7 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
             <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
             <div className="text-sm text-[#222222] leading-relaxed">
               <span className="font-bold block text-red-900 mb-1">What went wrong:</span>
-              <p>{errorMessage || 'The crawler encountered an unexpected error while trying to reach this website.'}</p>
+              <p>{safeString(errorMessage, 'The crawler encountered an unexpected error while trying to reach this website.')}</p>
             </div>
           </div>
         </div>
@@ -106,11 +107,11 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono">
             <div>
               <span className="text-[#888888]">Target Host: </span>
-              <span className="text-[#111111] font-semibold">{url}</span>
+              <span className="text-[#111111] font-semibold">{safeString(url)}</span>
             </div>
             <div>
               <span className="text-[#888888]">Status / Code: </span>
-              <span className="text-red-700 font-semibold">{errorDetails?.reason || 'CRAWL_INTERRUPTED'}</span>
+              <span className="text-red-700 font-semibold">{safeString(errorDetails?.reason, 'CRAWL_INTERRUPTED')}</span>
             </div>
             {errorDetails?.statusCode && (
               <div>

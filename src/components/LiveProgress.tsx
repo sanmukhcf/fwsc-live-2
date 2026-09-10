@@ -1,6 +1,7 @@
 import React from 'react';
 import { Loader2, Globe, FileText, CheckCircle2, ShieldCheck, Link2, Search } from 'lucide-react';
 import type { CrawlProgress } from '../types';
+import { safeString } from '../utils/formatError';
 
 interface LiveProgressProps {
   progress: CrawlProgress;
@@ -178,14 +179,14 @@ export const LiveProgress: React.FC<LiveProgressProps> = ({ progress, targetUrl,
           <Globe className="w-4 h-4 text-[#F29627] shrink-0" />
           <div className="text-xs text-[#444444] truncate">
             <span className="font-semibold text-[#111111]">Current URL: </span>
-            <span className="font-mono text-[#F29627]">{progress.currentUrl || targetUrl}</span>
+            <span className="font-mono text-[#F29627]">{safeString(progress.currentUrl || targetUrl)}</span>
           </div>
         </div>
 
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between text-xs font-semibold text-[#555555] mb-2">
-            <span>Status: {progress.statusMessage}</span>
+            <span>Status: {safeString(progress.statusMessage, 'Processing...')}</span>
             <span>{progress.percent}%</span>
           </div>
           <div className="w-full h-3 bg-[#E5E5E5] rounded-full overflow-hidden">
@@ -262,7 +263,7 @@ export const LiveProgress: React.FC<LiveProgressProps> = ({ progress, targetUrl,
                         : 'text-zinc-300'
                     }
                   >
-                    {log.message}
+                    {safeString(log.message)}
                   </span>
                 </div>
               ))

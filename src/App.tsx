@@ -24,6 +24,7 @@ import {
   removeUserAuditId,
 } from './utils/recentWebsites';
 import { safeFetchJson, getApiUrl, streamAuditCrawl } from './utils/apiClient';
+import { formatErrorMessage, safeString } from './utils/formatError';
 import {
   Download,
   FileSpreadsheet,
@@ -156,13 +157,20 @@ export default function App() {
         onError: (errorMsg, details) => {
           cleanupStreams();
           console.warn('Audit crawl failed:', errorMsg, details);
-          setErrorMessage(errorMsg || 'Crawl execution failed.');
+          const cleanMsg = formatErrorMessage(errorMsg, 'Crawl execution failed.');
+          setErrorMessage(cleanMsg);
           setErrorDetails(
-            details || {
+            details ? {
+              ...details,
+              message: formatErrorMessage(details.message, cleanMsg),
+              reason: safeString(details.reason, 'CRAWL_FAILED'),
+              errorType: safeString(details.errorType, 'Audit Failed'),
+              url: safeString(details.url, targetUrl),
+            } : {
               type: 'crawl_error',
               errorType: 'Audit Failed',
               reason: 'CRAWL_FAILED',
-              message: errorMsg || 'The audit could not be completed.',
+              message: cleanMsg,
               url: targetUrl,
             }
           );
@@ -193,9 +201,18 @@ export default function App() {
           await loadCompletedAudit(data.auditId);
         } else if (data.status === 'failed') {
           cleanupStreams();
-          setErrorMessage(data.error || 'Crawl failed');
-          setErrorDetails(data.errorDetails || null);
+          const cleanMsg = formatErrorMessage(data.error, 'Crawl failed');
+          setErrorMessage(cleanMsg);
+          setErrorDetails(data.errorDetails || {
+            type: 'crawl_error',
+            errorType: 'Audit Failed',
+            reason: 'CRAWL_FAILED',
+            message: cleanMsg,
+            url: data.url || lastAuditTarget?.url || '',
+          });
+          setAuditFailed(true);
           setActiveJob(null);
+          setIsLoading(false);
           if (data.url) {
             const cleaned = removeRecentWebsite(data.url);
             setRecentWebsites(cleaned);
@@ -486,11 +503,11 @@ export default function App() {
               <RobotsTab robots={auditResult.robotsAnalysis} />
             )}
           </div>
-        ) : auditFailed && (errorMessage || errorDetails) ? (
+        ) : auditFailed ? (
           /* VIEW 3: AUDIT FAILED */
           <AuditFailedView
             url={lastAuditTarget?.url || errorDetails?.url || ''}
-            errorMessage={errorMessage || 'Audit execution failed.'}
+            errorMessage={errorMessage || errorDetails?.message || 'Audit execution failed.'}
             errorDetails={errorDetails}
             onRetry={() => {
               if (lastAuditTarget) {
