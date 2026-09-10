@@ -36,8 +36,92 @@ export const LiveProgress: React.FC<LiveProgressProps> = ({ progress, targetUrl,
 
   const currentStepIdx = getStepIndex(progress.step);
 
+  const getMacroState = (step: CrawlProgress['step']): 'VALIDATING' | 'CRAWLING' | 'ANALYZING' | 'COMPLETED' => {
+    switch (step) {
+      case 'validating':
+      case 'robots':
+      case 'sitemap':
+        return 'VALIDATING';
+      case 'crawling':
+        return 'CRAWLING';
+      case 'analyzing_links':
+      case 'analyzing_duplicates':
+      case 'calculating_scores':
+        return 'ANALYZING';
+      case 'completed':
+        return 'COMPLETED';
+      default:
+        return 'VALIDATING';
+    }
+  };
+
+  const macroState = getMacroState(progress.step);
+
   return (
     <div className="w-full max-w-4xl mx-auto py-8">
+      {/* 4-Stage State Progression Banner */}
+      <div className="mb-4 bg-white rounded-xl border border-[#E5E5E5] p-3 shadow-xs flex items-center justify-between overflow-x-auto text-xs font-semibold gap-2">
+        <div className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-colors ${
+          macroState === 'VALIDATING'
+            ? 'bg-[#FFF5ED] text-[#F29627] font-bold border border-[#F29627]/30 shadow-xs'
+            : ['CRAWLING', 'ANALYZING', 'COMPLETED'].includes(macroState)
+            ? 'bg-emerald-50 text-emerald-700'
+            : 'text-[#888888]'
+        }`}>
+          {['CRAWLING', 'ANALYZING', 'COMPLETED'].includes(macroState) ? (
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          ) : macroState === 'VALIDATING' ? (
+            <span className="w-2 h-2 rounded-full bg-[#F29627] animate-pulse" />
+          ) : null}
+          <span>VALIDATING</span>
+        </div>
+
+        <span className="text-[#CCCCCC]">→</span>
+
+        <div className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-colors ${
+          macroState === 'CRAWLING'
+            ? 'bg-[#FFF5ED] text-[#F29627] font-bold border border-[#F29627]/30 shadow-xs'
+            : ['ANALYZING', 'COMPLETED'].includes(macroState)
+            ? 'bg-emerald-50 text-emerald-700'
+            : 'text-[#888888]'
+        }`}>
+          {['ANALYZING', 'COMPLETED'].includes(macroState) ? (
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          ) : macroState === 'CRAWLING' ? (
+            <span className="w-2 h-2 rounded-full bg-[#F29627] animate-pulse" />
+          ) : null}
+          <span>CRAWLING</span>
+        </div>
+
+        <span className="text-[#CCCCCC]">→</span>
+
+        <div className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-colors ${
+          macroState === 'ANALYZING'
+            ? 'bg-[#FFF5ED] text-[#F29627] font-bold border border-[#F29627]/30 shadow-xs'
+            : macroState === 'COMPLETED'
+            ? 'bg-emerald-50 text-emerald-700'
+            : 'text-[#888888]'
+        }`}>
+          {macroState === 'COMPLETED' ? (
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          ) : macroState === 'ANALYZING' ? (
+            <span className="w-2 h-2 rounded-full bg-[#F29627] animate-pulse" />
+          ) : null}
+          <span>ANALYZING</span>
+        </div>
+
+        <span className="text-[#CCCCCC]">→</span>
+
+        <div className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-colors ${
+          macroState === 'COMPLETED'
+            ? 'bg-emerald-100 text-emerald-800 font-bold border border-emerald-300'
+            : 'text-[#888888]'
+        }`}>
+          {macroState === 'COMPLETED' && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />}
+          <span>COMPLETED</span>
+        </div>
+      </div>
+
       {/* Container Card */}
       <div className="bg-white rounded-2xl border border-[#E5E5E5] p-6 sm:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.06)]">
         {/* Top Header */}

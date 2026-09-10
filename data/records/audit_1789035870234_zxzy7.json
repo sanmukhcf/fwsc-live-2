@@ -1,0 +1,267 @@
+{
+  "id": "audit_1789035870234_zxzy7",
+  "websiteUrl": "https://example.com/",
+  "normalizedDomain": "example.com",
+  "maxPages": 5,
+  "createdAt": "2026-09-10T10:24:29.149Z",
+  "completedAt": "2026-09-10T10:24:30.235Z",
+  "durationMs": 1085,
+  "scores": {
+    "overall": 93,
+    "status": "Excellent",
+    "technical": 95,
+    "onPage": 89,
+    "content": 95,
+    "linkStructure": 100,
+    "crawlability": 88
+  },
+  "pagesCrawledCount": 1,
+  "pagesDiscoveredCount": 1,
+  "isPartial": false,
+  "issueCounts": {
+    "total": 8,
+    "critical": 0,
+    "warning": 6,
+    "info": 2,
+    "passed": 3
+  },
+  "pages": [
+    {
+      "url": "https://example.com/",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [],
+      "finalUrl": "https://example.com/",
+      "contentType": "text/html",
+      "loadTimeMs": 23,
+      "sizeBytes": 559,
+      "title": {
+        "text": "Example Domain",
+        "length": 14,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [
+          "Example Domain"
+        ],
+        "count": 1,
+        "status": "ok"
+      },
+      "headings": {
+        "h1": [
+          "Example Domain"
+        ],
+        "h2": [],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [],
+      "canonical": {
+        "url": null,
+        "status": "missing"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": null
+      },
+      "wordCount": 17,
+      "textLength": 125,
+      "textToHtmlRatio": 22.36,
+      "isThinContent": true,
+      "internalLinks": [],
+      "externalLinks": [
+        {
+          "href": "https://iana.org/domains/example",
+          "text": "Learn more",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": false,
+      "schemaTypes": [],
+      "hasStructuredData": false,
+      "lang": "en",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "issues": [
+          "Missing character encoding (<meta charset=\"utf-8\">)."
+        ]
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 0,
+        "warning": 4,
+        "info": 2
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "passed-http-status",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Crawled Pages Returned Valid Status",
+      "description": "No 4xx, 5xx, or network errors were detected among crawled pages.",
+      "recommendation": "Continue monitoring server logs and internal links regularly.",
+      "affectedPages": []
+    },
+    {
+      "id": "passed-https",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Pages Use Secure HTTPS",
+      "description": "All crawled pages are securely delivered over HTTPS protocol.",
+      "recommendation": "Ensure SSL/TLS certificates are set to auto-renew.",
+      "affectedPages": []
+    },
+    {
+      "id": "missing-canonical",
+      "category": "Technical",
+      "severity": "warning",
+      "title": "Missing Rel=\"Canonical\" Tag",
+      "description": "1 page(s) do not specify a canonical URL tag in their <head>.",
+      "recommendation": "Add a self-referential or target canonical link tag (<link rel=\"canonical\" href=\"...\">) to prevent duplicate content issues.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "short-title",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Title Tag Too Short (< 30 characters)",
+      "description": "1 page(s) have titles under 30 characters, missing keyword opportunities.",
+      "recommendation": "Expand title tags to between 30 and 60 characters with descriptive primary keywords and brand name.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "missing-meta-desc",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Missing Meta Description",
+      "description": "1 page(s) do not define a meta description tag.",
+      "recommendation": "Add compelling meta descriptions (120-155 characters) summarizing the page and enticing search clicks.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "missing-open-graph",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Missing Open Graph Metadata",
+      "description": "1 page(s) lack complete Open Graph tags (og:title or og:image).",
+      "recommendation": "Add og:title, og:description, and og:image tags for rich preview rendering on social platforms.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "missing-structured-data",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "No Structured Data (Schema.org / JSON-LD) Detected",
+      "description": "1 page(s) do not include JSON-LD or Microdata schema markup.",
+      "recommendation": "Implement Schema.org JSON-LD markup (such as WebSite, Organization, Article, or Product) to qualify for rich snippets in Google SERPs.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "thin-content",
+      "category": "Content",
+      "severity": "warning",
+      "title": "Thin Content (< 200 words)",
+      "description": "1 page(s) have fewer than 200 words of visible text.",
+      "recommendation": "Enrich page copy with detailed, high-value content relevant to user search intent.",
+      "affectedPages": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "id": "passed-broken-links",
+      "category": "Links",
+      "severity": "passed",
+      "title": "Zero Broken Internal Links Found",
+      "description": "All internal links tested across crawled pages resolved successfully.",
+      "recommendation": "Periodically re-crawl to catch any newly created broken URLs.",
+      "affectedPages": []
+    },
+    {
+      "id": "missing-robots-txt",
+      "category": "Crawlability",
+      "severity": "warning",
+      "title": "robots.txt File Missing (404)",
+      "description": "The website does not provide a robots.txt file at /robots.txt.",
+      "recommendation": "Create a robots.txt file to guide search engine crawlers and declare sitemap locations.",
+      "affectedPages": [
+        "https://example.com/robots.txt"
+      ]
+    },
+    {
+      "id": "missing-sitemap",
+      "category": "Crawlability",
+      "severity": "warning",
+      "title": "XML Sitemap Not Found",
+      "description": "No valid XML sitemap was discovered in robots.txt or standard paths (/sitemap.xml).",
+      "recommendation": "Generate and submit an XML sitemap to Google Search Console to aid discovery of deep URLs.",
+      "affectedPages": []
+    }
+  ],
+  "duplicatePairs": [],
+  "robotsAnalysis": {
+    "exists": false,
+    "url": "https://example.com/robots.txt",
+    "content": "",
+    "sitemaps": [],
+    "blockedPaths": [],
+    "issues": [
+      "robots.txt was not found (404). Search engines will assume everything is crawlable, but having one is recommended."
+    ]
+  },
+  "sitemapAnalysis": {
+    "exists": false,
+    "url": "",
+    "totalUrls": 0,
+    "urls": [],
+    "errors": [
+      {
+        "url": "https://example.com/sitemap.xml",
+        "status": 404
+      },
+      {
+        "url": "https://example.com/sitemap_index.xml",
+        "status": 404
+      },
+      {
+        "url": "https://example.com/wp-sitemap.xml",
+        "status": 404
+      }
+    ],
+    "redirected": [],
+    "unreachableUrls": []
+  },
+  "brokenLinks": [],
+  "externalDomainsCount": 1,
+  "totalExternalLinksCount": 1
+}

@@ -1,4 +1,4 @@
-import type { AuditErrorDetails } from '../types';
+import type { AuditErrorDetails, CrawlProgress, AuditResult } from '../types';
 
 export interface ApiResponse<T> {
   ok: boolean;
@@ -7,6 +7,164 @@ export interface ApiResponse<T> {
   error?: string;
   errorDetails?: AuditErrorDetails;
   rawText?: string;
+}
+
+export interface StreamProgressCallbacks {
+  onProgress: (progress: CrawlProgress) => void;
+  onComplete: (result: AuditResult) => void;
+  onError: (error: string, errorDetails?: AuditErrorDetails) => void;
+}
+
+/**
+ * Streams audit progress events directly from the API endpoint.
+ * Supports both streaming responses (NDJSON chunks / SSE) and standard JSON responses.
+ * Never throws unhandled exceptions; all failures are routed cleanly to onError.
+ */
+export async function streamAuditCrawl(
+  targetUrl: string,
+  maxPages: number,
+  callbacks: StreamProgressCallbacks,
+  signal?: AbortSignal
+): Promise<void> {
+  const fullUrl = getApiUrl('/api/audit/start');
+
+  try {
+    const res = await fetch(fullUrl, {
+      method: 'POST',
+      signal,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/x-ndjson, text/event-stream, application/json',
+      },
+      body: JSON.stringify({ url: targetUrl, maxPages, stream: true }),
+    });
+
+    const contentType = (res.headers.get('content-type') || '').toLowerCase();
+
+    // Check for HTTP errors first
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      let errJson: any = null;
+      try {
+        errJson = JSON.parse(text);
+      } catch {
+        // Non-JSON error
+      }
+
+      const errorMsg =
+        errJson?.error ||
+        errJson?.message ||
+        (res.status === 404
+          ? 'Audit API route was not found (HTTP 404). Please verify API deployment.'
+          : `Server returned HTTP ${res.status} (${res.statusText || 'Error'})`);
+
+      const details: AuditErrorDetails = errJson?.errorDetails || {
+        type: 'crawl_error',
+        errorType: errJson?.errorType || `HTTP Error ${res.status}`,
+        reason: errJson?.reason || `HTTP_${res.status}`,
+        message: errorMsg,
+        url: targetUrl,
+        statusCode: res.status,
+      };
+
+      callbacks.onError(errorMsg, details);
+      return;
+    }
+
+    // Handle Streaming response (ReadableStream)
+    if (res.body && (contentType.includes('ndjson') || contentType.includes('stream') || !contentType.includes('application/json'))) {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+      let completedOrFailed = false;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) {
+          buffer += decoder.decode();
+          break;
+        }
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || ''; // Keep remainder in buffer
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed) continue;
+
+          try {
+            // Strip SSE "data: " prefix if present
+            const jsonStr = trimmed.startsWith('data:') ? trimmed.slice(5).trim() : trimmed;
+            const parsed = JSON.parse(jsonStr);
+
+            if (parsed.type === 'progress' && parsed.progress) {
+              callbacks.onProgress(parsed.progress);
+            } else if (parsed.type === 'completed' && parsed.result) {
+              completedOrFailed = true;
+              callbacks.onComplete(parsed.result);
+            } else if (parsed.type === 'failed') {
+              completedOrFailed = true;
+              callbacks.onError(parsed.error || 'Audit crawl failed.', parsed.errorDetails);
+            }
+          } catch {
+            // Ignore non-JSON heartbeat lines
+          }
+        }
+      }
+
+      // Check leftover buffer
+      if (buffer.trim()) {
+        try {
+          const jsonStr = buffer.trim().startsWith('data:') ? buffer.trim().slice(5).trim() : buffer.trim();
+          const parsed = JSON.parse(jsonStr);
+          if (parsed.type === 'completed' && parsed.result) {
+            completedOrFailed = true;
+            callbacks.onComplete(parsed.result);
+          } else if (parsed.type === 'failed') {
+            completedOrFailed = true;
+            callbacks.onError(parsed.error || 'Audit crawl failed.', parsed.errorDetails);
+          }
+        } catch {
+          // Ignore
+        }
+      }
+
+      if (completedOrFailed) return;
+    }
+
+    // Fallback: If response was not chunked or reader completed without final event, parse as single JSON
+    const text = await res.text().catch(() => '');
+    if (text.trim()) {
+      try {
+        const parsed = JSON.parse(text);
+        if (parsed.result) {
+          callbacks.onComplete(parsed.result);
+          return;
+        }
+        if (parsed.status === 'failed') {
+          callbacks.onError(parsed.error || 'Audit failed.', parsed.errorDetails);
+          return;
+        }
+      } catch {
+        // Fall through
+      }
+    }
+  } catch (err: any) {
+    if (signal?.aborted) {
+      callbacks.onError('Audit was cancelled.');
+      return;
+    }
+
+    const message = err?.message || 'Failed to establish connection to audit server.';
+    callbacks.onError(message, {
+      type: 'unreachable',
+      errorType: 'Network Error',
+      reason: 'NETWORK_ERROR',
+      message,
+      url: targetUrl,
+    });
+  }
 }
 
 /**

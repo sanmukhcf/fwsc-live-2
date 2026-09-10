@@ -25,8 +25,10 @@ export function createExpressApp(): express.Express {
   // 2. Body Parser
   app.use(express.json({ limit: '2mb' }));
 
+  const apiRouter = express.Router();
+
   // 3. API Health Check
-  app.get('/api/health', (req, res) => {
+  apiRouter.get('/health', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.json({
       status: 'ok',
@@ -36,9 +38,8 @@ export function createExpressApp(): express.Express {
     });
   });
 
-  // 4. Start new audit
-  app.post('/api/audit/start', async (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
+  // 4. Start new audit (supports both real-time streaming chunks for serverless and background jobs)
+  apiRouter.post('/audit/start', async (req, res) => {
     const { url, maxPages } = req.body || {};
 
     // Validate and sanitize URL
@@ -112,7 +113,83 @@ export function createExpressApp(): express.Express {
 
     AuditRepository.createJob(job);
 
-    // Launch crawler in background
+    const wantsStream =
+      req.body?.stream === true ||
+      req.query.stream === 'true' ||
+      req.headers['accept']?.includes('application/x-ndjson') ||
+      req.headers['accept']?.includes('text/event-stream') ||
+      Boolean(process.env.VERCEL);
+
+    if (wantsStream) {
+      res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
+      res.setHeader('Transfer-Encoding', 'chunked');
+      res.setHeader('Cache-Control', 'no-cache, no-transform');
+      res.setHeader('X-Accel-Buffering', 'no');
+
+      const sendChunk = (data: any) => {
+        if (!res.writableEnded) {
+          res.write(JSON.stringify(data) + '\n');
+        }
+      };
+
+      // Send initial validating state
+      sendChunk({
+        type: 'progress',
+        step: 'validating',
+        jobId,
+        url: validation.normalizedUrl,
+        progress: initialProgress,
+      });
+
+      const crawler = new CrawlerEngine(validation.normalizedUrl, pagesLimit, (progress) => {
+        AuditRepository.updateJob(jobId, { progress });
+        sendChunk({ type: 'progress', step: progress.step, jobId, progress });
+      });
+
+      req.on('close', () => {
+        crawler.cancel();
+      });
+
+      crawler
+        .run()
+        .then(async (result) => {
+          AuditRepository.updateJob(jobId, {
+            status: 'completed',
+            completedAt: new Date().toISOString(),
+            result,
+          });
+          await AuditRepository.saveAudit(result);
+          sendChunk({ type: 'completed', jobId, auditId: result.id, result });
+          res.end();
+        })
+        .catch((err) => {
+          console.error(`Audit failed for ${validation.normalizedUrl}:`, err);
+          const errorDetails: AuditErrorDetails =
+            err instanceof AuditExecutionError
+              ? err.details
+              : {
+                  type: 'crawl_error',
+                  errorType: 'Audit Failed',
+                  reason: err.code || 'CRAWL_FAILED',
+                  message: err.message || 'Crawl execution failed',
+                  url: validation.normalizedUrl,
+                };
+
+          AuditRepository.updateJob(jobId, {
+            status: 'failed',
+            error: errorDetails.message,
+            errorDetails,
+          });
+
+          sendChunk({ type: 'failed', jobId, error: errorDetails.message, errorDetails });
+          res.end();
+        });
+
+      return;
+    }
+
+    // Standard non-streaming background execution fallback
+    res.setHeader('Content-Type', 'application/json');
     const crawler = new CrawlerEngine(validation.normalizedUrl, pagesLimit, (progress) => {
       AuditRepository.updateJob(jobId, { progress });
 
@@ -199,7 +276,7 @@ export function createExpressApp(): express.Express {
   });
 
   // 5. Check job progress (polling fallback)
-  app.get('/api/audit/:id/status', (req, res) => {
+  apiRouter.get('/audit/:id/status', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     const job = AuditRepository.getJob(req.params.id);
     if (!job) {
@@ -228,7 +305,7 @@ export function createExpressApp(): express.Express {
   });
 
   // 6. SSE stream for real-time progress
-  app.get('/api/audit/:id/stream', (req, res) => {
+  apiRouter.get('/audit/:id/stream', (req, res) => {
     const jobId = req.params.id;
     const job = AuditRepository.getJob(jobId);
 
@@ -281,7 +358,7 @@ export function createExpressApp(): express.Express {
   });
 
   // 7. Get completed audit by ID
-  app.get('/api/audit/:id', async (req, res) => {
+  apiRouter.get('/audit/:id', async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     const audit = await AuditRepository.getAudit(req.params.id);
     if (!audit) {
@@ -301,21 +378,21 @@ export function createExpressApp(): express.Express {
   });
 
   // 8. List past audits
-  app.get('/api/audits', async (req, res) => {
+  apiRouter.get('/audits', async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     const history = await AuditRepository.listAudits();
     res.json(history);
   });
 
   // 9. Delete an audit
-  app.delete('/api/audits/:id', async (req, res) => {
+  apiRouter.delete('/audits/:id', async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     const success = await AuditRepository.deleteAudit(req.params.id);
     res.json({ success });
   });
 
   // 10. Export CSV
-  app.get('/api/audit/:id/export/csv', async (req, res) => {
+  apiRouter.get('/audit/:id/export/csv', async (req, res) => {
     const audit = await AuditRepository.getAudit(req.params.id);
     if (!audit) {
       res.setHeader('Content-Type', 'application/json');
@@ -369,7 +446,7 @@ export function createExpressApp(): express.Express {
   });
 
   // 11. Export JSON
-  app.get('/api/audit/:id/export/json', async (req, res) => {
+  apiRouter.get('/audit/:id/export/json', async (req, res) => {
     const audit = await AuditRepository.getAudit(req.params.id);
     if (!audit) {
       res.setHeader('Content-Type', 'application/json');
@@ -381,6 +458,10 @@ export function createExpressApp(): express.Express {
     res.setHeader('Content-Disposition', `attachment; filename="fwsc-seo-audit-${audit.normalizedDomain}.json"`);
     res.send(JSON.stringify(audit, null, 2));
   });
+
+  // Mount router on BOTH '/api' AND '/' to guarantee compatibility with Vercel rewrites and direct calls
+  app.use('/api', apiRouter);
+  app.use('/', apiRouter);
 
   // 12. Catch-all for undefined /api/* routes to ALWAYS return JSON (never Express HTML)
   app.all('/api/*', (req, res) => {

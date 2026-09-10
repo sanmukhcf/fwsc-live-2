@@ -2,27 +2,59 @@ import fs from 'fs';
 import path from 'path';
 import type { AuditResult, AuditJob, AuditHistoryItem } from '../src/types';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+// Determine writable data directory safely for local, Docker, and serverless (e.g. Vercel)
+function resolveDataDir(): string {
+  // If explicitly on Vercel or AWS Lambda, /tmp is guaranteed writable
+  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT) {
+    return path.join('/tmp', 'fwsc_data');
+  }
+
+  const defaultDir = path.join(process.cwd(), 'data');
+  try {
+    if (!fs.existsSync(defaultDir)) {
+      fs.mkdirSync(defaultDir, { recursive: true });
+    }
+    // Test write permission
+    const testFile = path.join(defaultDir, '.write_test');
+    fs.writeFileSync(testFile, '1');
+    fs.unlinkSync(testFile);
+    return defaultDir;
+  } catch (err) {
+    // Read-only filesystem detected (e.g. Lambda container /var/task), fallback to /tmp
+    return path.join('/tmp', 'fwsc_data');
+  }
+}
+
+const DATA_DIR = resolveDataDir();
 const AUDITS_FILE = path.join(DATA_DIR, 'audits_index.json');
 const AUDITS_RECORDS_DIR = path.join(DATA_DIR, 'records');
 
-// In-memory caches and active jobs
+// In-memory caches and active jobs (always guaranteed to work regardless of filesystem)
 const activeJobs = new Map<string, AuditJob>();
 const auditCache = new Map<string, AuditResult>();
 
 function ensureDataDirectories() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(AUDITS_RECORDS_DIR)) {
-    fs.mkdirSync(AUDITS_RECORDS_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(AUDITS_FILE)) {
-    fs.writeFileSync(AUDITS_FILE, JSON.stringify([]), 'utf-8');
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(AUDITS_RECORDS_DIR)) {
+      fs.mkdirSync(AUDITS_RECORDS_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(AUDITS_FILE)) {
+      fs.writeFileSync(AUDITS_FILE, JSON.stringify([]), 'utf-8');
+    }
+  } catch (err) {
+    // Non-fatal if filesystem is restricted; memory cache will continue working
+    console.warn('Filesystem access limited, operating in-memory:', (err as any)?.message);
   }
 }
 
-ensureDataDirectories();
+try {
+  ensureDataDirectories();
+} catch {
+  // Silent fallback
+}
 
 export class AuditRepository {
   // Save completed audit
@@ -30,34 +62,42 @@ export class AuditRepository {
     ensureDataDirectories();
     auditCache.set(audit.id, audit);
 
-    // Save full record to disk
-    const recordPath = path.join(AUDITS_RECORDS_DIR, `${audit.id}.json`);
-    fs.writeFileSync(recordPath, JSON.stringify(audit, null, 2), 'utf-8');
-
-    // Update index
-    const historyList = await this.listAudits();
-    const existingIndex = historyList.findIndex(h => h.id === audit.id);
-
-    const historyItem: AuditHistoryItem = {
-      id: audit.id,
-      websiteUrl: audit.websiteUrl,
-      createdAt: audit.createdAt,
-      pagesCrawled: audit.pagesCrawledCount,
-      score: audit.scores.overall,
-      scoreStatus: audit.scores.status,
-      criticalIssues: audit.issueCounts.critical,
-      warnings: audit.issueCounts.warning,
-    };
-
-    if (existingIndex >= 0) {
-      historyList[existingIndex] = historyItem;
-    } else {
-      historyList.unshift(historyItem);
+    // Save full record to disk safely
+    try {
+      const recordPath = path.join(AUDITS_RECORDS_DIR, `${audit.id}.json`);
+      fs.writeFileSync(recordPath, JSON.stringify(audit, null, 2), 'utf-8');
+    } catch (err) {
+      console.warn('Could not persist record to disk, kept in memory:', (err as any)?.message);
     }
 
-    // Keep top 100 in index
-    const trimmedIndex = historyList.slice(0, 100);
-    fs.writeFileSync(AUDITS_FILE, JSON.stringify(trimmedIndex, null, 2), 'utf-8');
+    // Update index safely
+    try {
+      const historyList = await this.listAudits();
+      const existingIndex = historyList.findIndex(h => h.id === audit.id);
+
+      const historyItem: AuditHistoryItem = {
+        id: audit.id,
+        websiteUrl: audit.websiteUrl,
+        createdAt: audit.createdAt,
+        pagesCrawled: audit.pagesCrawledCount,
+        score: audit.scores.overall,
+        scoreStatus: audit.scores.status,
+        criticalIssues: audit.issueCounts.critical,
+        warnings: audit.issueCounts.warning,
+      };
+
+      if (existingIndex >= 0) {
+        historyList[existingIndex] = historyItem;
+      } else {
+        historyList.unshift(historyItem);
+      }
+
+      // Keep top 100 in index
+      const trimmedIndex = historyList.slice(0, 100);
+      fs.writeFileSync(AUDITS_FILE, JSON.stringify(trimmedIndex, null, 2), 'utf-8');
+    } catch (err) {
+      console.warn('Could not update audits index file:', (err as any)?.message);
+    }
   }
 
   // Get full audit by ID

@@ -1,4 +1,7 @@
 import defaultApp from '../server/app';
 
 // Vercel serverless function entry point
-export default defaultApp;
+export default function handler(req: any, res: any) {
+  return defaultApp(req, res);
+}
+

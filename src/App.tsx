@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Header } from './components/Header';
 import { AuditInput } from './components/AuditInput';
 import { LiveProgress } from './components/LiveProgress';
+import { AuditFailedView } from './components/AuditFailedView';
 import { OverviewTab } from './components/OverviewTab';
 import { IssuesTable } from './components/IssuesTable';
 import { PageExplorer } from './components/PageExplorer';
@@ -22,7 +23,7 @@ import {
   addUserAuditId,
   removeUserAuditId,
 } from './utils/recentWebsites';
-import { safeFetchJson, getApiUrl } from './utils/apiClient';
+import { safeFetchJson, getApiUrl, streamAuditCrawl } from './utils/apiClient';
 import {
   Download,
   FileSpreadsheet,
@@ -52,9 +53,12 @@ export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [errorDetails, setErrorDetails] = useState<AuditErrorDetails | null>(null);
+  const [auditFailed, setAuditFailed] = useState<boolean>(false);
+  const [lastAuditTarget, setLastAuditTarget] = useState<{ url: string; maxPages: number } | null>(null);
 
   const eventSourceRef = useRef<EventSource | null>(null);
   const pollIntervalRef = useRef<number | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   // Load past audits on mount
   useEffect(() => {
@@ -65,6 +69,10 @@ export default function App() {
   }, []);
 
   const cleanupStreams = () => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
     if (eventSourceRef.current) {
       eventSourceRef.current.close();
       eventSourceRef.current = null;
@@ -96,106 +104,77 @@ export default function App() {
   const handleStartAudit = async (targetUrl: string, maxPages: number) => {
     setErrorMessage(null);
     setErrorDetails(null);
+    setAuditFailed(false);
+    setLastAuditTarget({ url: targetUrl, maxPages });
     setIsLoading(true);
     cleanupStreams();
 
-    // Clear previous errors and initiate crawl
-    try {
-      const res = await safeFetchJson<{ jobId: string; url: string; maxPages: number }>('/api/audit/start', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: targetUrl, maxPages }),
-      });
+    // Initial job representation for immediate UI transition to VALIDATING state
+    const initialJob: AuditJob = {
+      id: 'job_' + Date.now(),
+      url: targetUrl,
+      maxPages,
+      status: 'crawling',
+      progress: {
+        step: 'validating',
+        statusMessage: 'Starting crawler pipeline...',
+        pagesDiscovered: 1,
+        pagesCrawled: 0,
+        currentUrl: targetUrl,
+        percent: 0,
+        recentLogs: [{ time: new Date().toLocaleTimeString(), message: 'Connecting to target host...', type: 'info' }],
+      },
+      createdAt: new Date().toISOString(),
+    };
 
-      if (!res.ok || !res.data) {
-        const errorMsg = res.error || 'Failed to initiate crawl.';
-        setErrorMessage(errorMsg);
-        setErrorDetails(
-          res.errorDetails || {
-            type: 'crawl_error',
-            errorType: 'Audit Failed',
-            reason: 'START_FAILED',
-            message: errorMsg,
-            url: targetUrl,
-          }
-        );
-        setIsLoading(false);
-        const cleaned = removeRecentWebsite(targetUrl);
-        setRecentWebsites(cleaned);
-        return;
-      }
+    setActiveJob(initialJob);
+    setAuditResult(null);
 
-      const data = res.data;
+    const abortController = new AbortController();
+    abortControllerRef.current = abortController;
 
-      // Initial job representation
-      const initialJob: AuditJob = {
-        id: data.jobId,
-        url: data.url,
-        maxPages: data.maxPages,
-        status: 'crawling',
-        progress: {
-          step: 'validating',
-          statusMessage: 'Starting crawler pipeline...',
-          pagesDiscovered: 1,
-          pagesCrawled: 0,
-          currentUrl: data.url,
-          percent: 0,
-          recentLogs: [{ time: new Date().toLocaleTimeString(), message: 'Connecting to target host...', type: 'info' }],
+    // Use streamAuditCrawl which streams real-time progress events and handles both chunked serverless responses & fallbacks
+    streamAuditCrawl(
+      targetUrl,
+      maxPages,
+      {
+        onProgress: (progress) => {
+          setActiveJob((prev) => (prev ? { ...prev, progress } : null));
         },
-        createdAt: new Date().toISOString(),
-      };
-
-      setActiveJob(initialJob);
-      setAuditResult(null);
-      setIsLoading(false);
-
-      // Start Server-Sent Events (SSE) listener
-      try {
-        const sseUrl = getApiUrl(`/api/audit/${data.jobId}/stream`);
-        const es = new EventSource(sseUrl);
-        eventSourceRef.current = es;
-
-        es.onmessage = async (event) => {
-          try {
-            if (!event.data || typeof event.data !== 'string') return;
-            const payload = JSON.parse(event.data);
-            if (payload.status === 'crawling' && payload.progress) {
-              setActiveJob(prev => prev ? { ...prev, progress: payload.progress } : null);
-            } else if (payload.status === 'completed') {
-              cleanupStreams();
-              await loadCompletedAudit(payload.auditId);
-            } else if (payload.status === 'failed') {
-              cleanupStreams();
-              setErrorMessage(payload.error || 'Crawl execution failed.');
-              setErrorDetails(payload.errorDetails || null);
-              setActiveJob(null);
-              const cleaned = removeRecentWebsite(targetUrl);
-              setRecentWebsites(cleaned);
+        onComplete: async (result) => {
+          cleanupStreams();
+          setAuditResult(result);
+          setActiveJob(null);
+          setIsLoading(false);
+          setAuditFailed(false);
+          setActiveTab('overview');
+          addUserAuditId(result.id);
+          const updated = addRecentWebsite(result.websiteUrl);
+          setRecentWebsites(updated);
+          loadHistory();
+        },
+        onError: (errorMsg, details) => {
+          cleanupStreams();
+          console.warn('Audit crawl failed:', errorMsg, details);
+          setErrorMessage(errorMsg || 'Crawl execution failed.');
+          setErrorDetails(
+            details || {
+              type: 'crawl_error',
+              errorType: 'Audit Failed',
+              reason: 'CRAWL_FAILED',
+              message: errorMsg || 'The audit could not be completed.',
+              url: targetUrl,
             }
-          } catch (e) {
-            console.error('SSE event processing error:', e);
-          }
-        };
-
-        es.onerror = () => {
-          // SSE dropped, start fallback polling
-          startPolling(data.jobId);
-        };
-      } catch {
-        startPolling(data.jobId);
-      }
-    } catch (err: any) {
-      const cleanMsg = err?.message || 'Network error communicating with audit server';
-      setErrorMessage(cleanMsg);
-      setErrorDetails({
-        type: 'crawl_error',
-        errorType: 'Network Error',
-        reason: 'FETCH_FAILED',
-        message: cleanMsg,
-        url: targetUrl,
-      });
-      setIsLoading(false);
-    }
+          );
+          setAuditFailed(true);
+          setActiveJob(null);
+          setIsLoading(false);
+          const cleaned = removeRecentWebsite(targetUrl);
+          setRecentWebsites(cleaned);
+        },
+      },
+      abortController.signal
+    );
   };
 
   const startPolling = (jobId: string) => {
@@ -507,8 +486,25 @@ export default function App() {
               <RobotsTab robots={auditResult.robotsAnalysis} />
             )}
           </div>
+        ) : auditFailed && (errorMessage || errorDetails) ? (
+          /* VIEW 3: AUDIT FAILED */
+          <AuditFailedView
+            url={lastAuditTarget?.url || errorDetails?.url || ''}
+            errorMessage={errorMessage || 'Audit execution failed.'}
+            errorDetails={errorDetails}
+            onRetry={() => {
+              if (lastAuditTarget) {
+                handleStartAudit(lastAuditTarget.url, lastAuditTarget.maxPages);
+              }
+            }}
+            onReset={() => {
+              setAuditFailed(false);
+              setErrorMessage(null);
+              setErrorDetails(null);
+            }}
+          />
         ) : (
-          /* VIEW 3: INITIAL LAUNCH SCREEN */
+          /* VIEW 4: INITIAL LAUNCH SCREEN */
           <div>
             <AuditInput
               onStartAudit={handleStartAudit}
