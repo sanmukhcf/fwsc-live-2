@@ -1,0 +1,1400 @@
+{
+  "id": "audit_1789114422386_5n7fh",
+  "websiteUrl": "https://jobistaan.com/",
+  "normalizedDomain": "jobistaan.com",
+  "maxPages": 5,
+  "createdAt": "2026-09-11T08:13:34.082Z",
+  "completedAt": "2026-09-11T08:13:42.386Z",
+  "durationMs": 8304,
+  "scores": {
+    "overall": 90,
+    "status": "Excellent",
+    "technical": 95,
+    "onPage": 75,
+    "content": 93,
+    "linkStructure": 95,
+    "crawlability": 100
+  },
+  "pagesCrawledCount": 5,
+  "pagesDiscoveredCount": 22,
+  "isPartial": false,
+  "issueCounts": {
+    "total": 10,
+    "critical": 1,
+    "warning": 6,
+    "info": 3,
+    "passed": 6
+  },
+  "pages": [
+    {
+      "url": "https://jobistaan.com/",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [],
+      "finalUrl": "https://jobistaan.com/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 433,
+      "sizeBytes": 229637,
+      "title": {
+        "text": "jobistaan.com",
+        "length": 13,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [
+          "Your dream job starts with a\n        great resume"
+        ],
+        "count": 1,
+        "status": "ok"
+      },
+      "headings": {
+        "h1": [
+          "Your dream job starts with a\n        great resume"
+        ],
+        "h2": [
+          "HR Solutions for your Business",
+          "Explore Top Job Categories",
+          "Built for Every Sideof Hiring",
+          "Find YourDream Job",
+          "Hire theRight Talent",
+          "Your Journey to Real Experiences",
+          "Sectors We Serve",
+          "How It’s Possible",
+          "Simple Staffing Procedures",
+          "Job Analysis",
+          "Applicant Review",
+          "Job Place & Check",
+          "Empower Your Team with Our Staffing Solutions.",
+          "CHECK OUT OUR NEWS",
+          "Quick Links",
+          "Quick Links",
+          "Newsletter",
+          "Fill in your details here!",
+          "Share your hiring requirements"
+        ],
+        "h3": [
+          "Ready to land your next job?",
+          "IT & Technology",
+          "BPO & Call Centers",
+          "Sales & Marketing",
+          "Corporate & Finance",
+          "CHECK OUT OUR NEWS\nLatest Blogs & Articles",
+          "Best Digital Marketing Agency for ChatGPT Ads in India",
+          "How digiVirus Helps Businesses Build a ChatGPT Ads Campaign",
+          "How Businesses Can Build an Effective ChatGPT Ads Campaign"
+        ],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": [
+          "Heading level skipped: H1 directly followed by H3 (\"Ready to land your next job?...\")"
+        ]
+      },
+      "images": [
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/ac_assets/stacked_images/face1.jpg",
+          "alt": "uc_stacked_images_elementor_e4ec9d2_item1",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/ac_assets/stacked_images/face2.jpg",
+          "alt": "uc_stacked_images_elementor_e4ec9d2_item2",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/ac_assets/stacked_images/face3.jpg",
+          "alt": "uc_stacked_images_elementor_e4ec9d2_item3",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/ac_assets/stacked_images/face4.jpg",
+          "alt": "uc_stacked_images_elementor_e4ec9d2_item4",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/07/1-1024x1024.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/07/2-1024x1024.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/07/3-1024x1024.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-9-2026-02_54_46-PM-300x200.webp",
+          "alt": "Best Digital Marketing Agency for ChatGPT Ads in India",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-8-2026-04_52_29-PM-300x200.webp",
+          "alt": "How digiVirus Helps Businesses Build a ChatGPT Ads Campaign",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-5-2026-06_00_28-PM-300x200.webp",
+          "alt": "How Businesses Can Build an Effective ChatGPT Ads Campaign",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        }
+      ],
+      "canonical": {
+        "url": "https://jobistaan.com/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "max-image-preview:large"
+      },
+      "wordCount": 738,
+      "textLength": 4595,
+      "textToHtmlRatio": 2,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://jobistaan.com/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/create-resume/",
+          "text": "Create Resume",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/about-us/",
+          "text": "About",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/contact-us/",
+          "text": "Contact",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blogs/",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/registration/",
+          "text": "Post a Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/job/",
+          "text": "Find Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/employer-public/",
+          "text": "Find Employee",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/cv-resume/",
+          "text": "Browse templates",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/candidate-directory/",
+          "text": "Post a Job →",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/best-digital-marketing-agency-for-chatgpt-ads-in-india/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/how-digivirus-helps-businesses-build-a-chatgpt-ads-campaign/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/how-businesses-can-build-an-effective-chatgpt-ads-campaign/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blog",
+          "text": "View More",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/home/",
+          "text": "Home",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/terms-and-conditions/",
+          "text": "Terms and Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/my-account/",
+          "text": "My Account",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 4,
+      "isOrphan": false,
+      "schemaTypes": [
+        "WebPage"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 0,
+        "warning": 3,
+        "info": 3
+      }
+    },
+    {
+      "url": "https://jobistaan.com/contact-us",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/contact-us/"
+      ],
+      "finalUrl": "https://jobistaan.com/contact-us/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 841,
+      "sizeBytes": 175383,
+      "title": {
+        "text": "Contact Us – jobistaan.com",
+        "length": 26,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Don’t hesitate to contact us for more information",
+          "Get in Touch",
+          "Quick Links",
+          "Quick Links",
+          "Newsletter",
+          "Fill in your details here!",
+          "Share your hiring requirements"
+        ],
+        "h3": [
+          "Head Office",
+          "Email us",
+          "Call us",
+          "Get In Touch"
+        ],
+        "h4": [],
+        "h5": [],
+        "h6": [
+          "Get in Touch"
+        ],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        }
+      ],
+      "canonical": {
+        "url": "https://jobistaan.com/contact-us/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "max-image-preview:large"
+      },
+      "wordCount": 280,
+      "textLength": 1824,
+      "textToHtmlRatio": 1.04,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://jobistaan.com/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/create-resume/",
+          "text": "Create Resume",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/about-us/",
+          "text": "About",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/contact-us/",
+          "text": "Contact",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blogs/",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/registration/",
+          "text": "Post a Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/home/",
+          "text": "Home",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/terms-and-conditions/",
+          "text": "Terms and Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/my-account/",
+          "text": "My Account",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan/",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 4,
+      "isOrphan": false,
+      "schemaTypes": [
+        "WebPage",
+        "CreativeWork"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2
+      }
+    },
+    {
+      "url": "https://jobistaan.com/jobs",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/jobs/"
+      ],
+      "finalUrl": "https://jobistaan.com/jobs/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 1272,
+      "sizeBytes": 156625,
+      "title": {
+        "text": "Jobs – jobistaan.com",
+        "length": 20,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Quick Links",
+          "Quick Links",
+          "Newsletter",
+          "Fill in your details here!",
+          "Share your hiring requirements"
+        ],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/07/729-1-768x513.jpg",
+          "alt": "729 (1)",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        }
+      ],
+      "canonical": {
+        "url": "https://jobistaan.com/jobs/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "max-image-preview:large"
+      },
+      "wordCount": 123,
+      "textLength": 815,
+      "textToHtmlRatio": 0.52,
+      "isThinContent": true,
+      "internalLinks": [
+        {
+          "href": "https://jobistaan.com/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/create-resume/",
+          "text": "Create Resume",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/about-us/",
+          "text": "About",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/contact-us/",
+          "text": "Contact",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blogs/",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/registration/",
+          "text": "Post a Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/jobs/data-entry-expert/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/home/",
+          "text": "Home",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/terms-and-conditions/",
+          "text": "Terms and Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/my-account/",
+          "text": "My Account",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": true,
+      "schemaTypes": [
+        "WebPage",
+        "CreativeWork"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 6,
+        "info": 2
+      }
+    },
+    {
+      "url": "https://jobistaan.com/companies",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/companies/"
+      ],
+      "finalUrl": "https://jobistaan.com/companies/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 858,
+      "sizeBytes": 158477,
+      "title": {
+        "text": "Companies – jobistaan.com",
+        "length": 25,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Trusted by Industry Giants",
+          "Partnered with Over 100+ Renowned Companies",
+          "Quick Links",
+          "Quick Links",
+          "Newsletter",
+          "Fill in your details here!",
+          "Share your hiring requirements"
+        ],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        }
+      ],
+      "canonical": {
+        "url": "https://jobistaan.com/companies/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "max-image-preview:large"
+      },
+      "wordCount": 108,
+      "textLength": 738,
+      "textToHtmlRatio": 0.47,
+      "isThinContent": true,
+      "internalLinks": [
+        {
+          "href": "https://jobistaan.com/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/create-resume/",
+          "text": "Create Resume",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/about-us/",
+          "text": "About",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/contact-us/",
+          "text": "Contact",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blogs/",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/registration/",
+          "text": "Post a Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/home/",
+          "text": "Home",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/terms-and-conditions/",
+          "text": "Terms and Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/my-account/",
+          "text": "My Account",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": true,
+      "schemaTypes": [
+        "WebPage",
+        "CreativeWork"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 6,
+        "info": 2
+      }
+    },
+    {
+      "url": "https://jobistaan.com/about-us",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://jobistaan.com/about-us",
+        "https://jobistaan.com/about-us/"
+      ],
+      "finalUrl": "https://jobistaan.com/about-us/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 852,
+      "sizeBytes": 212971,
+      "title": {
+        "text": "About Us – jobistaan.com",
+        "length": 24,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Who we are",
+          "Here’s to growth and happiness in every person’s career journey",
+          "Trusted by Industry Giants",
+          "Partnered with Over 100+ Renowned Companies",
+          "What We Do",
+          "What We Do",
+          "Looking for a career change? Browse our job listings now!",
+          "Quick Links",
+          "Quick Links",
+          "Newsletter",
+          "Fill in your details here!",
+          "Share your hiring requirements"
+        ],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/10/jb.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/07/Untitled-design-27-724x1024.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://jobistaan.com/wp-content/uploads/2025/06/JOBISTAAN-Copy.png",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        }
+      ],
+      "canonical": {
+        "url": "https://jobistaan.com/about-us/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "max-image-preview:large"
+      },
+      "wordCount": 385,
+      "textLength": 2557,
+      "textToHtmlRatio": 1.2,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://jobistaan.com/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/create-resume/",
+          "text": "Create Resume",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/about-us/",
+          "text": "About",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/contact-us/",
+          "text": "Contact",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/blogs/",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/registration/",
+          "text": "Post a Job",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/employee/",
+          "text": "APPLY NOW",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/home/",
+          "text": "Home",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/terms-and-conditions/",
+          "text": "Terms and Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://jobistaan.com/my-account/",
+          "text": "My Account",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/jobistaan_com?igsh=MWo2OG5kMGdodWFodA==",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/people/Jobistaancom/61576680269749/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/jobistaan-com/",
+          "text": "Linkedin",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 4,
+      "isOrphan": false,
+      "schemaTypes": [
+        "WebPage",
+        "CreativeWork"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {},
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "passed-http-status",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Crawled Pages Returned Valid Status",
+      "description": "No 4xx, 5xx, or network errors were detected among crawled pages.",
+      "recommendation": "Continue monitoring server logs and internal links regularly.",
+      "affectedPages": []
+    },
+    {
+      "id": "redirect-chains",
+      "category": "Technical",
+      "severity": "warning",
+      "title": "Redirect Chains Detected",
+      "description": "4 URL(s) undergo more than one consecutive redirect before reaching the destination page.",
+      "recommendation": "Update links to point directly to the final destination URL to preserve crawl budget and reduce latency.",
+      "affectedPages": [
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "passed-https",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Pages Use Secure HTTPS",
+      "description": "All crawled pages are securely delivered over HTTPS protocol.",
+      "recommendation": "Ensure SSL/TLS certificates are set to auto-renew.",
+      "affectedPages": []
+    },
+    {
+      "id": "short-title",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Title Tag Too Short (< 30 characters)",
+      "description": "5 page(s) have titles under 30 characters, missing keyword opportunities.",
+      "recommendation": "Expand title tags to between 30 and 60 characters with descriptive primary keywords and brand name.",
+      "affectedPages": [
+        "https://jobistaan.com/",
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "missing-meta-desc",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Missing Meta Description",
+      "description": "5 page(s) do not define a meta description tag.",
+      "recommendation": "Add compelling meta descriptions (120-155 characters) summarizing the page and enticing search clicks.",
+      "affectedPages": [
+        "https://jobistaan.com/",
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "missing-h1",
+      "category": "On-Page",
+      "severity": "critical",
+      "title": "Missing H1 Heading",
+      "description": "4 page(s) do not contain a primary <h1> heading tag.",
+      "recommendation": "Ensure each page has exactly one prominent <h1> tag communicating the page theme.",
+      "affectedPages": [
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "heading-hierarchy-skipped",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Heading Hierarchy Levels Skipped",
+      "description": "1 page(s) skip heading levels (e.g., an H1 directly followed by an H4 without intermediate H2/H3).",
+      "recommendation": "Organize headings logically in sequential order (H1 -> H2 -> H3) for accessibility and crawl structure.",
+      "affectedPages": [
+        "https://jobistaan.com/"
+      ]
+    },
+    {
+      "id": "images-missing-alt",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Images Missing Descriptive Alt Attribute",
+      "description": "15 image(s) across 5 page(s) are missing descriptive alt text.",
+      "recommendation": "Add meaningful, descriptive alt text to images for image SEO and screen reader accessibility.",
+      "affectedPages": [
+        "https://jobistaan.com/",
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "missing-open-graph",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Missing Open Graph Metadata",
+      "description": "5 page(s) lack complete Open Graph tags (og:title or og:image).",
+      "recommendation": "Add og:title, og:description, and og:image tags for rich preview rendering on social platforms.",
+      "affectedPages": [
+        "https://jobistaan.com/",
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "thin-content",
+      "category": "Content",
+      "severity": "warning",
+      "title": "Thin Content (< 200 words)",
+      "description": "2 page(s) have fewer than 200 words of visible text.",
+      "recommendation": "Enrich page copy with detailed, high-value content relevant to user search intent.",
+      "affectedPages": [
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies"
+      ]
+    },
+    {
+      "id": "low-text-ratio",
+      "category": "Content",
+      "severity": "info",
+      "title": "Low Text-to-HTML Ratio (< 8%)",
+      "description": "5 page(s) have an excessive ratio of code markup to actual visible readable content.",
+      "recommendation": "Streamline inline CSS/JS and expand primary textual copy.",
+      "affectedPages": [
+        "https://jobistaan.com/",
+        "https://jobistaan.com/contact-us",
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies",
+        "https://jobistaan.com/about-us"
+      ]
+    },
+    {
+      "id": "passed-duplicate-content",
+      "category": "Content",
+      "severity": "passed",
+      "title": "No Significant Internal Duplicate Content",
+      "description": "All crawled pages provide unique internal textual content without duplicate overlap.",
+      "recommendation": "Maintain unique copy as new sections are published.",
+      "affectedPages": []
+    },
+    {
+      "id": "passed-broken-links",
+      "category": "Links",
+      "severity": "passed",
+      "title": "Zero Broken Internal Links Found",
+      "description": "All internal links tested across crawled pages resolved successfully.",
+      "recommendation": "Periodically re-crawl to catch any newly created broken URLs.",
+      "affectedPages": []
+    },
+    {
+      "id": "orphan-pages",
+      "category": "Links",
+      "severity": "warning",
+      "title": "Orphan Pages (0 Incoming Internal Links)",
+      "description": "2 discovered page(s) have zero incoming internal links from other crawled pages on your website.",
+      "recommendation": "Add contextual links in main navigation, category pages, or relevant articles pointing to these orphan pages.",
+      "affectedPages": [
+        "https://jobistaan.com/jobs",
+        "https://jobistaan.com/companies"
+      ]
+    },
+    {
+      "id": "passed-robots-txt",
+      "category": "Crawlability",
+      "severity": "passed",
+      "title": "robots.txt Valid and Accessible",
+      "description": "robots.txt is live, accessible, and declares 1 sitemap(s).",
+      "recommendation": "Continue reviewing robots.txt when adding new private areas.",
+      "affectedPages": [
+        "https://jobistaan.com/robots.txt"
+      ]
+    },
+    {
+      "id": "passed-sitemap",
+      "category": "Crawlability",
+      "severity": "passed",
+      "title": "XML Sitemap Discovered",
+      "description": "Discovered valid XML sitemap containing 79 indexed URLs.",
+      "recommendation": "Keep sitemap updated automatically via your CMS or build pipeline.",
+      "affectedPages": [
+        "https://jobistaan.com/wp-sitemap.xml"
+      ]
+    }
+  ],
+  "duplicatePairs": [],
+  "robotsAnalysis": {
+    "exists": true,
+    "url": "https://jobistaan.com/robots.txt",
+    "content": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://jobistaan.com/wp-sitemap.xml\n",
+    "sitemaps": [
+      "https://jobistaan.com/wp-sitemap.xml"
+    ],
+    "blockedPaths": [
+      "/wp-admin/"
+    ],
+    "issues": []
+  },
+  "sitemapAnalysis": {
+    "exists": true,
+    "url": "https://jobistaan.com/wp-sitemap.xml",
+    "totalUrls": 79,
+    "urls": [
+      "https://jobistaan.com/",
+      "https://jobistaan.com/contact-us/",
+      "https://jobistaan.com/jobs/",
+      "https://jobistaan.com/companies/",
+      "https://jobistaan.com/about-us/",
+      "https://jobistaan.com/terms-and-conditions/",
+      "https://jobistaan.com/employee/",
+      "https://jobistaan.com/employer/",
+      "https://jobistaan.com/find-job/",
+      "https://jobistaan.com/create-resume/",
+      "https://jobistaan.com/cv-resume/",
+      "https://jobistaan.com/blogs/",
+      "https://jobistaan.com/three/",
+      "https://jobistaan.com/jobus-job-archive/",
+      "https://jobistaan.com/registration/",
+      "https://jobistaan.com/my-account/",
+      "https://jobistaan.com/candidate-public/",
+      "https://jobistaan.com/employer-public/",
+      "https://jobistaan.com/login/",
+      "https://jobistaan.com/thank-you/",
+      "https://jobistaan.com/employer-directory/",
+      "https://jobistaan.com/candidate-directory/",
+      "https://jobistaan.com/top-5-digital-marketing-agencies-in-india/",
+      "https://jobistaan.com/why-businesses-prefer-national-level-digital-marketing-agencies/",
+      "https://jobistaan.com/top-5-0-rated-digital-marketing-agencies-in-india-2026/",
+      "https://jobistaan.com/remote-job-interviews-tips-for-global-opportunities/",
+      "https://jobistaan.com/virtual-interview-tips-how-to-impress-on-video-calls/",
+      "https://jobistaan.com/best-digital-marketing-agencies-in-india-for-dubai-based-companies/",
+      "https://jobistaan.com/best-answers-to-tell-me-about-yourself-for-freshers/",
+      "https://jobistaan.com/do-this-one-trick-to-him-the-interviewer-will-be-impressed/",
+      "https://jobistaan.com/how-us-businesses-can-hire-the-right-digital-marketing-agency-in-india/",
+      "https://jobistaan.com/best-ai-ads-agency-in-india-2026/",
+      "https://jobistaan.com/top-ai-creative-generation-agencies-in-india/",
+      "https://jobistaan.com/best-ai-video-production-companies-in-india/",
+      "https://jobistaan.com/best-ai-content-creation-agencies-in-india/",
+      "https://jobistaan.com/best-ai-advertising-companies-in-india-for-brands/",
+      "https://jobistaan.com/top-ai-based-digital-marketing-agencies-in-india/",
+      "https://jobistaan.com/best-ai-powered-advertising-agencies-in-india-2026/",
+      "https://jobistaan.com/top-lead-generation-agencies-in-india-for-high-quality-leads/",
+      "https://jobistaan.com/best-e-commerce-marketing-agencies-in-india-for-roi-driven-growth-in-2026/",
+      "https://jobistaan.com/top-seo-and-ai-based-ranking-agencies-in-india-in-2026/",
+      "https://jobistaan.com/best-ai-powered-advertising-agencies-in-india-2026-2/",
+      "https://jobistaan.com/top-digital-marketing-audit-service-providers-in-india/",
+      "https://jobistaan.com/top-digital-marketing-agencies-in-the-uae-from-india/",
+      "https://jobistaan.com/top-ai-creative-agencies-in-india-for-high-converting-campaigns/",
+      "https://jobistaan.com/best-indian-digital-marketing-agencies-serving-businesses-in-the-usa/",
+      "https://jobistaan.com/top-india-based-marketing-agencies-working-in-canada-from-india/",
+      "https://jobistaan.com/best-website-development-agencies-in-india-for-business-growth/",
+      "https://jobistaan.com/why-global-businesses-are-hiring-digital-marketing-agencies-from-india/",
+      "https://jobistaan.com/common-problems-with-digital-marketing-agencies-and-how-to-avoid-them/",
+      "https://jobistaan.com/agency-vs-in-house-marketing-what-works-better-in-2026/",
+      "https://jobistaan.com/how-the-right-digital-marketing-agency-can-10x-your-roi/",
+      "https://jobistaan.com/how-to-take-your-business-online-in-2026/",
+      "https://jobistaan.com/best-social-media-marketing-agency-in-india-why-businesses-choose-digivirus-for-real-growth/",
+      "https://jobistaan.com/best-digital-marketing-agency-in-india/",
+      "https://jobistaan.com/best-commercial-ads-marketing-agency-in-india-2/",
+      "https://jobistaan.com/best-marketing-for-production-shoot/",
+      "https://jobistaan.com/best-creator-marketing-agency-in-india/",
+      "https://jobistaan.com/best-content-marketing-agency-in-india/",
+      "https://jobistaan.com/brand-video-production-service-in-india/",
+      "https://jobistaan.com/how-the-best-social-media-agency-in-india-builds-strong-brands-online/",
+      "https://jobistaan.com/why-your-business-needs-a-social-media-marketing-agency-to-grow-online/",
+      "https://jobistaan.com/how-a-social-media-marketing-agency-can-increase-brand-awareness-and-sales/",
+      "https://jobistaan.com/best-social-media-agency-in-india-for-online-growth/",
+      "https://jobistaan.com/how-a-social-media-company-in-india-can-help-b2b-brands/",
+      "https://jobistaan.com/why-top-brands-are-switching-to-a-specialized-social-media-company-in-india/",
+      "https://jobistaan.com/how-to-measure-the-real-roi-of-hiring-a-social-media-agency-in-2026/",
+      "https://jobistaan.com/how-to-measure-the-real-roi-of-hiring-a-social-media-agency-in-2026-2/",
+      "https://jobistaan.com/10-things-to-ask-before-hiring-an-ai-ads-creation-company/",
+      "https://jobistaan.com/choosing-the-right-digital-marketing-agency-in-india/",
+      "https://jobistaan.com/are-you-really-working-with-indias-best-digital-marketing-company/",
+      "https://jobistaan.com/what-to-ask-an-e-commerce-marketing-agency-before-hiring/",
+      "https://jobistaan.com/how-to-choose-the-best-social-media-agency-in-india-for-your-businesses/",
+      "https://jobistaan.com/how-do-chatgpt-ads-work-and-what-is-a-chatgpt-ad-campaign/",
+      "https://jobistaan.com/how-businesses-can-build-an-effective-chatgpt-ads-campaign/",
+      "https://jobistaan.com/how-digivirus-helps-businesses-build-a-chatgpt-ads-campaign/",
+      "https://jobistaan.com/best-digital-marketing-agency-for-chatgpt-ads-in-india/",
+      "https://jobistaan.com/jobs/data-entry-expert/",
+      "https://jobistaan.com/job/website-developer/"
+    ],
+    "errors": [],
+    "redirected": [],
+    "unreachableUrls": []
+  },
+  "brokenLinks": [],
+  "externalDomainsCount": 3,
+  "totalExternalLinksCount": 4
+}

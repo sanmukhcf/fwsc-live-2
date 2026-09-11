@@ -135,6 +135,11 @@ export class CrawlerEngine {
       let currentCheckUrl = this.targetUrl;
       const redirectChain: string[] = [currentCheckUrl];
       let initialResponse: Response | null = null;
+      let initialHtml = '';
+      let initialContentType = '';
+      let initialStatusCode = 200;
+      let initialFinalUrl = currentCheckUrl;
+      let initialLoadTimeMs = 0;
       let redirectHops = 0;
       const maxRedirectHops = 10;
 
@@ -281,6 +286,17 @@ export class CrawlerEngine {
         }
 
         initialResponse = res;
+        initialStatusCode = res.status;
+        initialContentType = res.headers.get('content-type') || '';
+        initialFinalUrl = res.url || currentCheckUrl;
+        initialLoadTimeMs = Date.now() - startTime;
+        if (initialContentType.includes('text/html') || initialContentType.includes('application/xhtml+xml') || !initialContentType) {
+          try {
+            initialHtml = await res.text();
+          } catch {
+            // Non-fatal, fallback to network fetch if text cannot be read
+          }
+        }
         break;
       }
 
@@ -393,113 +409,125 @@ export class CrawlerEngine {
       const pageTexts: Array<{ url: string; text: string }> = [];
       let consecutiveRateLimits = 0;
       let totalRateLimitedPages = 0;
-      let crawlDelayMs = 80;
       let isPartialCrawl = false;
-      const engineStartTime = Date.now();
-      // On Vercel Hobby serverless, functions are killed at 10s; complete safely well before that
-      const MAX_TOTAL_AUDIT_MS = process.env.VERCEL ? 8200 : 45000;
+      // Total elapsed audit time budget from the very start of run()
+      // On Vercel serverless (10s execution ceiling), halt crawling at 6500ms so post-crawl analysis finishes by ~7.5s
+      const MAX_TOTAL_AUDIT_MS = process.env.VERCEL ? 6500 : 45000;
 
       emit('crawling', 'Starting website crawl...', queue.discoveredCount, 0, this.targetUrl, 30, {
         message: 'Beginning deep page crawling and DOM analysis',
         type: 'info',
       });
 
-    while (queue.hasNext() && !this.isCancelled) {
-      // Check execution time budget to ensure complete report is sent before serverless timeout
-      if (Date.now() - engineStartTime > MAX_TOTAL_AUDIT_MS && crawledPages.length >= 1) {
-        emit('crawling', `Serverless time budget reached. Finalizing report with ${crawledPages.length} analyzed page(s)...`, queue.discoveredCount, crawledPages.length, this.targetUrl, 72, {
-          message: `Reached safe execution budget. Wrapping up audit and generating full report for ${crawledPages.length} analyzed page(s).`,
-          type: 'info',
-        });
-        break;
-      }
+      // 6.1 Fast Path: Instantly analyze page 1 (homepage) from pre-fetched initialHtml
+      if (initialHtml && queue.hasNext()) {
+        const homeUrl = queue.next();
+        if (homeUrl) {
+          let statusType: '2xx' | '3xx' | '4xx' | '5xx' | 'error' = '2xx';
+          if (initialStatusCode >= 200 && initialStatusCode < 300) statusType = '2xx';
+          else if (initialStatusCode >= 300 && initialStatusCode < 400) statusType = '3xx';
+          else if (initialStatusCode >= 400 && initialStatusCode < 500) statusType = '4xx';
+          else if (initialStatusCode >= 500) statusType = '5xx';
 
-      const currentUrl = queue.next();
-      if (!currentUrl) break;
+          const sizeBytes = Buffer.byteLength(initialHtml, 'utf-8');
+          const { page, rawText, discoveredInternalHrefs } = HtmlAnalyzer.analyzePage(
+            homeUrl,
+            initialHtml,
+            initialStatusCode,
+            statusType,
+            redirectChain,
+            initialFinalUrl,
+            initialContentType,
+            initialLoadTimeMs || 200,
+            sizeBytes,
+            baseHostname
+          );
 
-      // Respect robots.txt Disallow
-      try {
-        const parsedCurrent = new URL(currentUrl);
-        if (!RobotsParser.isUrlAllowed(parsedCurrent.pathname, robotsAnalysis.blockedPaths)) {
-          continue;
-        }
-      } catch {
-        continue;
-      }
+          crawledPages.push(page);
+          pageTexts.push({ url: homeUrl, text: rawText });
+          const addedFromHome = queue.addBatch(discoveredInternalHrefs);
 
-      // Check if target website is returning persistent 429s (rate limited)
-      if (consecutiveRateLimits >= 3 || totalRateLimitedPages >= 4) {
-        const successfulPages = crawledPages.filter(p => p.statusCode >= 200 && p.statusCode < 400);
-        if (successfulPages.length > 0) {
-          isPartialCrawl = true;
-          emit('crawling', `Crawl safely paused: Server rate-limiting requests. Generating partial audit for ${successfulPages.length} analyzed page(s)...`, queue.discoveredCount, crawledPages.length, currentUrl, 72, {
-            message: `Target server rate limit reached (HTTP 429). Halting crawl safely and preserving verified results for ${successfulPages.length} page(s).`,
-            type: 'warn',
-          });
-          break;
-        } else {
-          throw new AuditExecutionError({
-            type: 'rate_limited',
-            errorType: 'Rate Limited (HTTP 429)',
-            reason: 'HTTP_429',
-            message: 'The website is reachable, but the server temporarily limited crawler requests (HTTP 429). No pages could be analyzed.',
-            url: this.targetUrl,
-            statusCode: 429,
-            canRetry: true,
-            rateLimitInfo: {
-              pagesAnalyzed: 0,
-              pagesRateLimited: totalRateLimitedPages,
-              pagesRemaining: queue.queueLength + 1,
-              retryAfterSeconds: 30,
-            },
-          });
+          emit(
+            'crawling',
+            `Analyzed homepage (${crawledPages.length}/${this.maxPages})...`,
+            queue.discoveredCount,
+            crawledPages.length,
+            homeUrl,
+            35,
+            {
+              message: `Analyzed homepage and discovered ${addedFromHome} internal page candidates`,
+              type: 'success',
+            }
+          );
         }
       }
 
-      const crawlPercent = 30 + Math.floor((crawledPages.length / this.maxPages) * 45);
-      emit(
-        'crawling',
-        `Crawling page ${crawledPages.length + 1} of ${this.maxPages}...`,
-        queue.discoveredCount,
-        crawledPages.length,
-        currentUrl,
-        crawlPercent,
-        {
-          message: `Crawling: ${currentUrl}`,
-          type: 'info',
-        }
-      );
+      // 6.2 Concurrent worker pool for remaining pages
+      const CONCURRENCY = Math.min(3, Math.max(1, this.maxPages - crawledPages.length));
+      let activeFetches = 0;
+      let shouldStop = false;
 
-      try {
-        const fetchStart = Date.now();
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const worker = async () => {
+        while (!shouldStop && crawledPages.length < this.maxPages && !this.isCancelled) {
+          // Check execution time budget against startTime to ensure complete report is returned safely
+          if (Date.now() - startTime > MAX_TOTAL_AUDIT_MS && crawledPages.length >= 1) {
+            shouldStop = true;
+            emit('crawling', `Safe execution budget reached (${crawledPages.length} pages). Finalizing report...`, queue.discoveredCount, crawledPages.length, this.targetUrl, 72, {
+              message: `Reached safe execution budget (${((Date.now() - startTime) / 1000).toFixed(1)}s). Wrapping up audit and generating full report for ${crawledPages.length} analyzed page(s).`,
+              type: 'info',
+            });
+            break;
+          }
 
-        let response = await fetch(currentUrl, {
-          signal: controller.signal,
-          redirect: 'follow',
-          headers: {
-            'User-Agent': CRAWLER_USER_AGENT,
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.9',
-          },
-        });
-        clearTimeout(timeoutId);
+          if (consecutiveRateLimits >= 3 || totalRateLimitedPages >= 4) {
+            shouldStop = true;
+            isPartialCrawl = true;
+            break;
+          }
 
-        // If 429 encountered, attempt one respectful backoff retry if not in consecutive limit cascade
-        if (response.status === 429 && consecutiveRateLimits < 2) {
-          const retryAfterMs = parseRetryAfter(response.headers.get('retry-after')) || 2500;
-          emit('crawling', `HTTP 429 received on ${currentUrl.slice(0, 45)}. Backing off ${(retryAfterMs / 1000).toFixed(0)}s...`, queue.discoveredCount, crawledPages.length, currentUrl, crawlPercent, {
-            message: `Target server issued HTTP 429 on ${currentUrl}. Pausing ${(retryAfterMs / 1000).toFixed(0)}s before single retry...`,
-            type: 'warn',
-          });
-          await new Promise(resolve => setTimeout(resolve, retryAfterMs));
+          const currentUrl = queue.next();
+          if (!currentUrl) {
+            // If other workers are actively fetching, new links might arrive shortly
+            if (activeFetches > 0) {
+              await new Promise(r => setTimeout(r, 60));
+              continue;
+            }
+            break;
+          }
 
-          const retryController = new AbortController();
-          const retryTimeoutId = setTimeout(() => retryController.abort(), 4000);
+          // Respect robots.txt Disallow
           try {
-            const retryRes = await fetch(currentUrl, {
-              signal: retryController.signal,
+            const parsedCurrent = new URL(currentUrl);
+            if (!RobotsParser.isUrlAllowed(parsedCurrent.pathname, robotsAnalysis.blockedPaths)) {
+              continue;
+            }
+          } catch {
+            continue;
+          }
+
+          activeFetches++;
+          const crawlPercent = 35 + Math.floor((crawledPages.length / this.maxPages) * 40);
+
+          emit(
+            'crawling',
+            `Crawling page ${crawledPages.length + 1} of ${this.maxPages}...`,
+            queue.discoveredCount,
+            crawledPages.length,
+            currentUrl,
+            crawlPercent,
+            {
+              message: `Crawling: ${currentUrl}`,
+              type: 'info',
+            }
+          );
+
+          try {
+            const fetchStart = Date.now();
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 4500);
+
+            let response = await fetch(currentUrl, {
+              signal: controller.signal,
               redirect: 'follow',
               headers: {
                 'User-Agent': CRAWLER_USER_AGENT,
@@ -507,146 +535,144 @@ export class CrawlerEngine {
                 'Accept-Language': 'en-US,en;q=0.9',
               },
             });
-            clearTimeout(retryTimeoutId);
-            response = retryRes;
-          } catch {
-            clearTimeout(retryTimeoutId);
+            clearTimeout(timeoutId);
+
+            if (response.status === 429) {
+              consecutiveRateLimits++;
+              totalRateLimitedPages++;
+              await new Promise(r => setTimeout(r, 800));
+            } else {
+              consecutiveRateLimits = 0;
+            }
+
+            const loadTimeMs = Date.now() - fetchStart;
+            const statusCode = response.status;
+            const finalUrl = response.url || currentUrl;
+            const contentType = response.headers.get('content-type') || '';
+            const redirectChain: string[] = response.redirected ? [currentUrl, finalUrl] : [];
+
+            let statusType: '2xx' | '3xx' | '4xx' | '5xx' | 'error' = '2xx';
+            if (statusCode >= 200 && statusCode < 300) statusType = '2xx';
+            else if (statusCode >= 300 && statusCode < 400) statusType = '3xx';
+            else if (statusCode >= 400 && statusCode < 500) statusType = '4xx';
+            else if (statusCode >= 500) statusType = '5xx';
+
+            if (contentType.includes('text/html') || contentType.includes('application/xhtml+xml') || !contentType) {
+              const html = await response.text();
+              const sizeBytes = Buffer.byteLength(html, 'utf-8');
+
+              const { page, rawText, discoveredInternalHrefs } = HtmlAnalyzer.analyzePage(
+                currentUrl,
+                html,
+                statusCode,
+                statusType,
+                redirectChain,
+                finalUrl,
+                contentType,
+                loadTimeMs,
+                sizeBytes,
+                baseHostname
+              );
+
+              crawledPages.push(page);
+              pageTexts.push({ url: currentUrl, text: rawText });
+
+              const newlyQueued = queue.addBatch(discoveredInternalHrefs);
+              if (newlyQueued > 0) {
+                emit(
+                  'crawling',
+                  `Discovered ${newlyQueued} internal links on ${currentUrl.slice(0, 45)}...`,
+                  queue.discoveredCount,
+                  crawledPages.length,
+                  currentUrl,
+                  crawlPercent
+                );
+              }
+            } else {
+              crawledPages.push({
+                url: currentUrl,
+                statusCode,
+                statusType,
+                redirectChain,
+                finalUrl,
+                contentType,
+                loadTimeMs,
+                sizeBytes: 0,
+                title: { text: '', length: 0, status: 'missing' },
+                metaDescription: { text: '', length: 0, status: 'missing' },
+                h1: { text: [], count: 0, status: 'missing' },
+                headings: { h1: [], h2: [], h3: [], h4: [], h5: [], h6: [], issues: [] },
+                images: [],
+                canonical: { url: null, status: 'missing' },
+                robotsMeta: { noindex: false, nofollow: false, noarchive: false, nosnippet: false, raw: null },
+                wordCount: 0,
+                textLength: 0,
+                textToHtmlRatio: 0,
+                isThinContent: true,
+                internalLinks: [],
+                externalLinks: [],
+                incomingInternalLinksCount: 0,
+                isOrphan: false,
+                schemaTypes: [],
+                hasStructuredData: false,
+                lang: null,
+                openGraph: {},
+                htmlDoc: { hasDoctype: false, hasLang: false, hasViewport: false, issues: [] },
+                urlIssues: [],
+                httpsInfo: { isHttps: currentUrl.startsWith('https://'), mixedContent: [] },
+                issuesCount: { critical: 0, warning: 0, info: 0 },
+              });
+            }
+          } catch (err: any) {
+            crawledPages.push({
+              url: currentUrl,
+              statusCode: 0,
+              statusType: 'error',
+              redirectChain: [],
+              finalUrl: currentUrl,
+              contentType: '',
+              loadTimeMs: 0,
+              sizeBytes: 0,
+              title: { text: '', length: 0, status: 'missing' },
+              metaDescription: { text: '', length: 0, status: 'missing' },
+              h1: { text: [], count: 0, status: 'missing' },
+              headings: { h1: [], h2: [], h3: [], h4: [], h5: [], h6: [], issues: [] },
+              images: [],
+              canonical: { url: null, status: 'missing' },
+              robotsMeta: { noindex: false, nofollow: false, noarchive: false, nosnippet: false, raw: null },
+              wordCount: 0,
+              textLength: 0,
+              textToHtmlRatio: 0,
+              isThinContent: true,
+              internalLinks: [],
+              externalLinks: [],
+              incomingInternalLinksCount: 0,
+              isOrphan: false,
+              schemaTypes: [],
+              hasStructuredData: false,
+              lang: null,
+              openGraph: {},
+              htmlDoc: { hasDoctype: false, hasLang: false, hasViewport: false, issues: ['Connection failed or timed out'] },
+              urlIssues: [],
+              httpsInfo: { isHttps: currentUrl.startsWith('https://'), mixedContent: [] },
+              issuesCount: { critical: 1, warning: 0, info: 0 },
+            });
+
+            emit('crawling', `Failed to crawl: ${currentUrl}`, queue.discoveredCount, crawledPages.length, currentUrl, crawlPercent, {
+              message: `Connection error on ${currentUrl}: ${err.message || 'Timeout'}`,
+              type: 'error',
+            });
+          } finally {
+            activeFetches--;
           }
+
+          // Small throttle between consecutive page fetches
+          await new Promise(resolve => setTimeout(resolve, 40));
         }
+      };
 
-        const loadTimeMs = Date.now() - fetchStart;
-        const statusCode = response.status;
-        const finalUrl = response.url || currentUrl;
-        const contentType = response.headers.get('content-type') || '';
-        const redirectChain: string[] = response.redirected ? [currentUrl, finalUrl] : [];
-
-        let statusType: '2xx' | '3xx' | '4xx' | '5xx' | 'error' = '2xx';
-        if (statusCode >= 200 && statusCode < 300) statusType = '2xx';
-        else if (statusCode >= 300 && statusCode < 400) statusType = '3xx';
-        else if (statusCode >= 400 && statusCode < 500) statusType = '4xx';
-        else if (statusCode >= 500) statusType = '5xx';
-
-        if (statusCode === 429) {
-          consecutiveRateLimits++;
-          totalRateLimitedPages++;
-          crawlDelayMs = Math.min(2000, crawlDelayMs + 400);
-        } else {
-          consecutiveRateLimits = 0;
-        }
-
-        // Only parse HTML responses
-        if (contentType.includes('text/html') || contentType.includes('application/xhtml+xml') || !contentType) {
-          const html = await response.text();
-          const sizeBytes = Buffer.byteLength(html, 'utf-8');
-
-          const { page, rawText, discoveredInternalHrefs } = HtmlAnalyzer.analyzePage(
-            currentUrl,
-            html,
-            statusCode,
-            statusType,
-            redirectChain,
-            finalUrl,
-            contentType,
-            loadTimeMs,
-            sizeBytes,
-            baseHostname
-          );
-
-          crawledPages.push(page);
-          pageTexts.push({ url: currentUrl, text: rawText });
-
-          // Queue new discovered internal links
-          const newlyQueued = queue.addBatch(discoveredInternalHrefs);
-          if (newlyQueued > 0) {
-            emit(
-              'crawling',
-              `Discovered ${newlyQueued} new internal links on ${currentUrl.slice(0, 45)}...`,
-              queue.discoveredCount,
-              crawledPages.length,
-              currentUrl,
-              crawlPercent
-            );
-          }
-        } else {
-          // Non-HTML page (e.g. redirected or binary)
-          crawledPages.push({
-            url: currentUrl,
-            statusCode,
-            statusType,
-            redirectChain,
-            finalUrl,
-            contentType,
-            loadTimeMs,
-            sizeBytes: 0,
-            title: { text: '', length: 0, status: 'missing' },
-            metaDescription: { text: '', length: 0, status: 'missing' },
-            h1: { text: [], count: 0, status: 'missing' },
-            headings: { h1: [], h2: [], h3: [], h4: [], h5: [], h6: [], issues: [] },
-            images: [],
-            canonical: { url: null, status: 'missing' },
-            robotsMeta: { noindex: false, nofollow: false, noarchive: false, nosnippet: false, raw: null },
-            wordCount: 0,
-            textLength: 0,
-            textToHtmlRatio: 0,
-            isThinContent: true,
-            internalLinks: [],
-            externalLinks: [],
-            incomingInternalLinksCount: 0,
-            isOrphan: false,
-            schemaTypes: [],
-            hasStructuredData: false,
-            lang: null,
-            openGraph: {},
-            htmlDoc: { hasDoctype: false, hasLang: false, hasViewport: false, issues: [] },
-            urlIssues: [],
-            httpsInfo: { isHttps: currentUrl.startsWith('https://'), mixedContent: [] },
-            issuesCount: { critical: 0, warning: 0, info: 0 },
-          });
-        }
-      } catch (err: any) {
-        crawledPages.push({
-          url: currentUrl,
-          statusCode: 0,
-          statusType: 'error',
-          redirectChain: [],
-          finalUrl: currentUrl,
-          contentType: '',
-          loadTimeMs: 0,
-          sizeBytes: 0,
-          title: { text: '', length: 0, status: 'missing' },
-          metaDescription: { text: '', length: 0, status: 'missing' },
-          h1: { text: [], count: 0, status: 'missing' },
-          headings: { h1: [], h2: [], h3: [], h4: [], h5: [], h6: [], issues: [] },
-          images: [],
-          canonical: { url: null, status: 'missing' },
-          robotsMeta: { noindex: false, nofollow: false, noarchive: false, nosnippet: false, raw: null },
-          wordCount: 0,
-          textLength: 0,
-          textToHtmlRatio: 0,
-          isThinContent: true,
-          internalLinks: [],
-          externalLinks: [],
-          incomingInternalLinksCount: 0,
-          isOrphan: false,
-          schemaTypes: [],
-          hasStructuredData: false,
-          lang: null,
-          openGraph: {},
-          htmlDoc: { hasDoctype: false, hasLang: false, hasViewport: false, issues: ['Connection failed or timed out'] },
-          urlIssues: [],
-          httpsInfo: { isHttps: currentUrl.startsWith('https://'), mixedContent: [] },
-          issuesCount: { critical: 1, warning: 0, info: 0 },
-        });
-
-        emit('crawling', `Failed to crawl: ${currentUrl}`, queue.discoveredCount, crawledPages.length, currentUrl, crawlPercent, {
-          message: `Connection error on ${currentUrl}: ${err.message || 'Timeout'}`,
-          type: 'error',
-        });
-      }
-
-      // Polite rate-limiting delay between requests
-      await new Promise(resolve => setTimeout(resolve, crawlDelayMs));
-    }
+      const workers = Array.from({ length: CONCURRENCY }, () => worker());
+      await Promise.all(workers);
 
     if (crawledPages.length === 0) {
       if (totalRateLimitedPages > 0) {

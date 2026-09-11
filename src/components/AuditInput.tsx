@@ -21,7 +21,7 @@ export const AuditInput: React.FC<AuditInputProps> = ({
   onSelectRecentWebsite,
 }) => {
   const [url, setUrl] = useState('');
-  const [maxPages, setMaxPages] = useState<number>(50);
+  const [maxPages, setMaxPages] = useState<number>(10);
   const [showSettings, setShowSettings] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -269,7 +269,7 @@ export const AuditInput: React.FC<AuditInputProps> = ({
                   Maximum Pages to Crawl
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {[10, 50, 100, 500].map((pages) => (
+                  {[10, 25, 50, 100].map((pages) => (
                     <button
                       key={pages}
                       type="button"
@@ -280,7 +280,7 @@ export const AuditInput: React.FC<AuditInputProps> = ({
                           : 'bg-white text-[#333333] border-[#E5E5E5] hover:border-[#F29627]/50'
                       }`}
                     >
-                      {pages} Pages {pages === 50 && '(Default)'}
+                      {pages} Pages {pages === 10 && '(Default)'}
                     </button>
                   ))}
                 </div>

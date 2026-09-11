@@ -36,7 +36,7 @@ export class SitemapParser {
 
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 4000);
+        const timeoutId = setTimeout(() => controller.abort(), 2500);
 
         const response = await fetch(sitemapUrl, {
           signal: controller.signal,
