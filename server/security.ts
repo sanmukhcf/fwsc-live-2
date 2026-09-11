@@ -1,6 +1,15 @@
 import dns from 'dns';
 import net from 'net';
 
+// Prefer IPv4 first in dual-stack Node environments (vital for AWS Lambda / Vercel container routing)
+try {
+  if (typeof dns.setDefaultResultOrder === 'function') {
+    dns.setDefaultResultOrder('ipv4first');
+  }
+} catch {
+  // Safe ignore if unsupported
+}
+
 export interface UrlValidationResult {
   isValid: boolean;
   normalizedUrl: string;
@@ -145,17 +154,24 @@ export async function resolveAndValidateDns(hostname: string, timeoutMs = 6000):
   }
 
   try {
+    let timeoutId: NodeJS.Timeout;
     const lookupPromise = dns.promises.lookup(hostname, { all: true });
     const timeoutPromise = new Promise<never>((_, reject) => {
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         const err = new Error('DNS resolution timed out');
         (err as any).code = 'ETIMEDOUT';
         reject(err);
       }, timeoutMs);
     });
 
-    const addresses = await Promise.race([lookupPromise, timeoutPromise]);
-    if (!addresses || addresses.length === 0) {
+    let rawAddresses: dns.LookupAddress[];
+    try {
+      rawAddresses = await Promise.race([lookupPromise, timeoutPromise]);
+    } finally {
+      clearTimeout(timeoutId!);
+    }
+
+    if (!rawAddresses || rawAddresses.length === 0) {
       return {
         isValid: false,
         errorType: 'DNS Resolution Failed',
@@ -163,6 +179,9 @@ export async function resolveAndValidateDns(hostname: string, timeoutMs = 6000):
         message: 'The domain could not be resolved. Please check the website address and try again.',
       };
     }
+
+    // Sort IPv4 first for maximum network compatibility
+    const addresses = [...rawAddresses].sort((a, b) => (a.family === 4 ? -1 : (b.family === 4 ? 1 : 0)));
 
     for (const addr of addresses) {
       if (isPrivateOrReservedIp(addr.address)) {

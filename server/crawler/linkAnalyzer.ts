@@ -80,13 +80,13 @@ export class LinkAnalyzer {
       };
     });
 
-    // 4. Sample check top 10 unique external links for broken status (with low latency timeout)
-    const externalUrlsToCheck = Array.from(externalLinksSet).slice(0, 10);
+    // 4. Sample check top 6 unique external links for broken status (with fast 1.5s timeout)
+    const externalUrlsToCheck = Array.from(externalLinksSet).slice(0, 6);
     await Promise.allSettled(
       externalUrlsToCheck.map(async (extUrl) => {
         try {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 4000);
+          const timeoutId = setTimeout(() => controller.abort(), 1500);
           const res = await fetch(extUrl, {
             method: 'HEAD',
             signal: controller.signal,

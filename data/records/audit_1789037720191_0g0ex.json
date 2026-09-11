@@ -1,0 +1,2806 @@
+{
+  "id": "audit_1789037720191_0g0ex",
+  "websiteUrl": "https://digivirus.in/",
+  "normalizedDomain": "digivirus.in",
+  "maxPages": 5,
+  "createdAt": "2026-09-10T10:55:10.291Z",
+  "completedAt": "2026-09-10T10:55:20.191Z",
+  "durationMs": 9900,
+  "scores": {
+    "overall": 91,
+    "status": "Excellent",
+    "technical": 95,
+    "onPage": 74,
+    "content": 98,
+    "linkStructure": 95,
+    "crawlability": 100
+  },
+  "pagesCrawledCount": 5,
+  "pagesDiscoveredCount": 25,
+  "isPartial": false,
+  "issueCounts": {
+    "total": 10,
+    "critical": 1,
+    "warning": 5,
+    "info": 4,
+    "passed": 6
+  },
+  "pages": [
+    {
+      "url": "https://digivirus.in/",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [],
+      "finalUrl": "https://digivirus.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 55,
+      "sizeBytes": 318149,
+      "title": {
+        "text": "India's Most Trusted Digital Marketing Agency - digiVirus.in",
+        "length": 60,
+        "status": "ok"
+      },
+      "metaDescription": {
+        "text": "Best Digital Marketing Agency In India | Trusted By Leading Brands & Unicorns | Improve Business Performance Up To 60% | 5.0 Rated On Google",
+        "length": 140,
+        "status": "ok"
+      },
+      "h1": {
+        "text": [
+          "Best Digital Marketing Agency in India"
+        ],
+        "count": 1,
+        "status": "ok"
+      },
+      "headings": {
+        "h1": [
+          "Best Digital Marketing Agency in India"
+        ],
+        "h2": [
+          "We Take Marketing Headaches of Your",
+          "SMM & Branding\n\n,  ⁠Performance Marketing\n\n,  ⁠Lead Generation\n\n, Website & App \n\n,  Ecommerce Marketing\n\n, AI Ranking & SEO\n\n, AI Ads Creation",
+          "top digital marketing agency in india",
+          "Fill The Form Below To Request A Callback",
+          "Our Track Record",
+          "INDIA",
+          "UAE",
+          "USA",
+          "CANADA",
+          "We Helping You In",
+          "We Helping You In",
+          "Ae babuchak, bina digital marketing ke growth kaise hogi?\n- Jethalal",
+          "Aye business owner, kaha tak le jaaoge business ko bina digital marketing ke? - Chotta Pandit",
+          "FAQ's",
+          "Quick Links",
+          "Services",
+          "Contact Us",
+          "SOCIALS"
+        ],
+        "h3": [
+          "India's Most Trusted Digital Marketing Agency For Business Owners",
+          "Awards & Recognitions",
+          "Revenue Increased",
+          "Revenue Generated",
+          "Lead Quality Enhanced",
+          "Engagement Boost",
+          "Brand Reach Increased",
+          "ROI Enhanced",
+          "Traffic Growth",
+          "Conversion Rate Improved",
+          "Social Media Marketing & Branding",
+          "Performance Marketing",
+          "Lead Generation",
+          "AI Ads Creation",
+          "E-Commerce Marketing",
+          "AI Ranking & SEO",
+          "Website Development & App Design",
+          "Digital Marketing Audit",
+          "Be like Mr. Bean, keep it relaxed! Marketing ki headaches nahi lene ka! - Mr. Bean"
+        ],
+        "h4": [
+          "Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |   Trusted by Unicorn Brands   |",
+          "India’s Most Trusted SEO Agencies – Edition 2026",
+          "Featured Among India’s Leading Startup Ecosystem Conversations",
+          "Our Partners",
+          "Trusted & Rated 5.0 ⭐⭐⭐⭐⭐",
+          "Providing digital marketing services globally",
+          "Challenges you face in Your Business",
+          "We Are Different",
+          "1. Why does my business need digital marketing?",
+          "2. How to select the best digital marketing agency for my business?",
+          "3. Can digital marketing increase sales?",
+          "4. How transparent is digiVirus with reporting and performance?",
+          "5. How does AI Ads Creation help improve ad performance?",
+          "6. What kind of support and commitment can clients expect from digiVirus?",
+          "7. Why is digiVirus the right digital marketing agency for your business?",
+          "8. Does digiVirus customize strategies for different industries?"
+        ],
+        "h5": [
+          "Not sure how to take your business digital.",
+          "Competitors overtaking your business.",
+          "No time to handle marketing headaches because of product development.",
+          "Haven’t found the perfect agency that understands your goals.",
+          "We Don’t Make Fake Promises",
+          "Handled Unicorn Businesses Worldwide",
+          "5+ Years of Experience",
+          "Maintain Transparency at Every Step"
+        ],
+        "h6": [],
+        "issues": [
+          "Heading level skipped: H2 directly followed by H4 (\"Trusted by Unicorn Brands   |   Trusted ...\")",
+          "Heading level skipped: H1 directly followed by H4 (\"Trusted & Rated 5.0 ⭐⭐⭐⭐⭐...\")",
+          "Heading level skipped: H2 directly followed by H4 (\"Challenges you face in Your Business...\")",
+          "Heading level skipped: H2 directly followed by H4 (\"1. Why does my business need digital mar...\")"
+        ]
+      },
+      "images": [
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-1-e1769667506148.webp",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/n.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/03/Government-Of-India-3.webp",
+          "alt": "Government Of India",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Anytime-Fitness.webp",
+          "alt": "Anytime-Fitness",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Bajaj-Two-Wheeler.webp",
+          "alt": "Bajaj-Two-Wheeler",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Barista-Coffee.webp",
+          "alt": "Barista-Coffee",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Godrej-Interior.webp",
+          "alt": "Godrej-Interior",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/IIT-BHU.webp",
+          "alt": "IIT-BHU",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/London-Coffee.webp",
+          "alt": "London-Coffee",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Royal-Enfields.webp",
+          "alt": "Royal-Enfields",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Unacademy.webp",
+          "alt": "Unacademy",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/Untitled-design-46.webp",
+          "alt": "Untitled design (46)",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/ChatGPT-Image-Jun-29-2026-03_02_18-PM.webp",
+          "alt": "ChatGPT Image Jun 29, 2026, 03_02_18 PM",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/ChatGPT-Image-Jun-29-2026-03_03_51-PM.webp",
+          "alt": "ChatGPT Image Jun 29, 2026, 03_03_51 PM",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/Indias-Most-Trusted-SEO-Agencies-Edition-2026.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/Startup-Mahakumbh-2025.webp",
+          "alt": "",
+          "missingAlt": false,
+          "emptyAlt": true
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/shopify-e1769420448634.webp",
+          "alt": "shopify",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/meta.webp",
+          "alt": "meta",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/hubspot-e1769251395613.webp",
+          "alt": "hubspot",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/google-e1769251210769.webp",
+          "alt": "google",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/cashfree-e1769251143661.webp",
+          "alt": "cashfree",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/hostinger-e1769251266551.webp",
+          "alt": "hostinger",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/hostinger-e1769251266551-1024x260.webp",
+          "alt": "hostinger",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/cashfree-e1769251143661-1024x305.webp",
+          "alt": "cashfree",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/google-e1769251210769-1024x311.webp",
+          "alt": "google",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/meta-1024x243.webp",
+          "alt": "meta",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/hubspot-e1769251395613-1024x332.webp",
+          "alt": "hubspot",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/shopify-e1769420448634-1024x212.webp",
+          "alt": "shopify",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Ae-Chal-Form-Fill-Kar.webp",
+          "alt": "digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/admin-ajax-1.webp",
+          "alt": "digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/admin-ajax-2.png",
+          "alt": "mascot digivirus",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/Untitled-design-32.webp",
+          "alt": "google review",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/Untitled-design-33.webp",
+          "alt": "Clutch",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/Untitled-design-35.webp",
+          "alt": "JustDial",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-57.png",
+          "alt": "the tribune",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-55.png",
+          "alt": "ANI",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-54.png",
+          "alt": "the week",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-52.png",
+          "alt": "the wire",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-31.png",
+          "alt": "england news portal",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-34.png",
+          "alt": "the hindustan express",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-38.png",
+          "alt": "UAE times",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-39.png",
+          "alt": "France network times",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-50.png",
+          "alt": "news economic india",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-51.png",
+          "alt": "USA report",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-29.png",
+          "alt": "British News network",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-28.png",
+          "alt": "New York Despatch",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-14-1.png",
+          "alt": "East Asia",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-8.png",
+          "alt": "India News",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/google-news.png",
+          "alt": "google news",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/yahoo-news.png",
+          "alt": "yahoo news",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/Untitled-design-56.png",
+          "alt": "Dailyhunt",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/indias-best-digital-marketing-agency.gif",
+          "alt": "india's best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Monkey-1.webp",
+          "alt": "best marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/image_processing20210904-25643-qqhlzu-1-1.gif",
+          "alt": "Puzzel gif",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Social.webp",
+          "alt": "Social Media Marketing & Branding",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/advertising.png",
+          "alt": "Performance Marketing",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/user-engagement.png",
+          "alt": "Lead Generation",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/AI-Ads-Creation.webp",
+          "alt": "AI Ads Creation",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/shopping-bag.png",
+          "alt": "E-Commerce Marketing",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/admin-ajax-1-1.webp",
+          "alt": "AI Ranking & SEO",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Web.webp",
+          "alt": "Website Development & App Design",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/02/admin-ajax-2-1.png",
+          "alt": "Digital Marketing Audit",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Mr-Bean-1.webp",
+          "alt": "digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/Jethalal-Vector-Art.webp",
+          "alt": "digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/download-18.webp",
+          "alt": "digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/1.gif",
+          "alt": "1",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/2.gif",
+          "alt": "2",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/3.gif",
+          "alt": "3",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/4.gif",
+          "alt": "4",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/logo-1024x303.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-48.webp",
+          "alt": "MSME certificate",
+          "missingAlt": false,
+          "emptyAlt": false
+        }
+      ],
+      "canonical": {
+        "url": "https://digivirus.in/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      "wordCount": 1709,
+      "textLength": 11913,
+      "textToHtmlRatio": 3.75,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/about-us",
+          "text": "About Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-social-media-marketing-india/",
+          "text": "Social Media Marketing & Branding",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-performance-marketing-agency-in-india/",
+          "text": "Performance Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-lead-generation-agency-in-india/",
+          "text": "Lead Generation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ad-agency-in-india/",
+          "text": "AI Ads Creation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+          "text": "E-Commerce Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+          "text": "AI Ranking & SEO",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+          "text": "Website Development & App Design",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+          "text": "Digital Marketing Audit",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digital-marketing-calculator/",
+          "text": "Labs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/our-case-studies",
+          "text": "Case Study",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact",
+          "text": "Contact Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results/",
+          "text": "Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise/",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact-us",
+          "text": "Contact us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results",
+          "text": "View Our Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digivirus.in",
+          "text": "digiVirus.in",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/privacy-policy/",
+          "text": "Privacy Policy",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/terms-conditions/",
+          "text": "Terms & Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/refund-policy/",
+          "text": "Refund Policy",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://medium.com/@digivirus",
+          "text": "Medium",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.blogger.com/profile/04703655932756115078",
+          "text": "Blogger",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 4,
+      "isOrphan": false,
+      "schemaTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Organization",
+        "FAQPage",
+        "WPHeader",
+        "SiteNavigationElement"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {
+        "title": "India's Most Trusted Digital Marketing Agency - digiVirus.in",
+        "description": "Best Digital Marketing Agency In India | Trusted By Leading Brands & Unicorns | Improve Business Performance Up To 60% | 5.0 Rated On Google",
+        "image": "https://digivirus.in/wp-content/uploads/2026/04/n.webp",
+        "url": "https://digivirus.in/",
+        "twitterCard": "summary_large_image"
+      },
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 0,
+        "warning": 1,
+        "info": 2
+      }
+    },
+    {
+      "url": "https://digivirus.in/blog",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://digivirus.in/blog",
+        "https://digivirus.in/blog/"
+      ],
+      "finalUrl": "https://digivirus.in/blog/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 222,
+      "sizeBytes": 167292,
+      "title": {
+        "text": "Blog - digiVirus",
+        "length": 16,
+        "status": "too_short"
+      },
+      "metaDescription": {
+        "text": "",
+        "length": 0,
+        "status": "missing"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Muse AI Explained: How It Works, What Businesses Need to Know",
+          "GPT-6 Astra: What Is It and How Is It Changing AI?",
+          "ChatGPT Ads vs Meta Ads vs Google Ads: Which Is Better?",
+          "Best Digital Marketing Agency for ChatGPT Ads in India",
+          "What Is a ChatGPT Ad Campaign? How to Run ChatGPT Ad Campaign",
+          "Why Businesses Need a Full Marketing service Under One Roof",
+          "How Does a Social Media Company Work in India?",
+          "Why Choose Us as Your SEO Company in India?",
+          "What Is Meta Lattice? How Meta Ranks Your Ads",
+          "How Professional Video Marketing Services Work",
+          "Quick Links",
+          "Services",
+          "Contact Us",
+          "SOCIALS"
+        ],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-1-e1769667506148.webp",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/09/Meta-Muse-AI-Explained-How-It-Works-and-What-Businesses-Need-to-Know-300x200.webp",
+          "alt": "Muse AI Explained: How It Works, What Businesses Need to Know",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/09/GPT-6-Astra-What-Is-It-and-How-Is-It-Changing-AI-300x200.webp",
+          "alt": "GPT-6 Astra: What Is It and How Is It Changing AI?",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/09/ChatGPT-Ads-vs-Meta-Ads-vs-Google-Ads-Which-Is-Better-300x200.webp",
+          "alt": "ChatGPT Ads vs Meta Ads vs Google Ads: Which Is Better?",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/09/Best-Digital-Marketing-Agency-for-ChatGPT-Ads-in-India-2-300x200.webp",
+          "alt": "Best Digital Marketing Agency for ChatGPT Ads in India",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/09/ChatGPT-Ad-Campaign-How-to-Run-Your-ChatGPT-Ad-Campaign-300x200.webp",
+          "alt": "What Is a ChatGPT Ad Campaign? How to Run ChatGPT Ad Campaign",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/08/Why-Businesses-Need-a-Full-Marketing-service-Under-One-Roof-300x200.webp",
+          "alt": "Why Businesses Need a Full Marketing service Under One Roof",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/08/How-Does-a-Social-Media-Company-Work-in-India-1-300x200.webp",
+          "alt": "How Does a Social Media Company Work in India?",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/08/Why-Choose-Us-as-Your-SEO-Company-in-India-300x200.webp",
+          "alt": "Why Choose Us as Your SEO Company in India?",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/08/What-Is-Meta-Lattice-How-Meta-Ranks-Your-Ads-300x200.webp",
+          "alt": "What Is Meta Lattice? How Meta Ranks Your Ads",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/08/How-Professional-Video-Marketing-Services-Work-1-300x200.webp",
+          "alt": "How Professional Video Marketing Services Work",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/logo-1024x303.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-48.webp",
+          "alt": "MSME certificate",
+          "missingAlt": false,
+          "emptyAlt": false
+        }
+      ],
+      "canonical": {
+        "url": "https://digivirus.in/blog/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      "wordCount": 906,
+      "textLength": 5981,
+      "textToHtmlRatio": 3.58,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/about-us",
+          "text": "About Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-social-media-marketing-india/",
+          "text": "Social Media Marketing & Branding",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-performance-marketing-agency-in-india/",
+          "text": "Performance Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-lead-generation-agency-in-india/",
+          "text": "Lead Generation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ad-agency-in-india/",
+          "text": "AI Ads Creation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+          "text": "E-Commerce Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+          "text": "AI Ranking & SEO",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+          "text": "Website Development & App Design",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+          "text": "Digital Marketing Audit",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digital-marketing-calculator/",
+          "text": "Labs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/our-case-studies",
+          "text": "Case Study",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact",
+          "text": "Contact Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results/",
+          "text": "Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise/",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact-us",
+          "text": "Contact us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/muse-ai-explained-how-it-works-what-businesses-need-to-know/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/author/digivirus-secure/",
+          "text": "digivirus.secure",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/category/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/gpt-6-astra-what-is-it-and-how-is-it-changing-ai/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/chatgpt-ads-vs-meta-ads-vs-google-ads-which-is-better/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-agency-for-chatgpt-ads-in-india/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/what-is-a-chatgpt-ad-campaign-how-to-run-chatgpt-ad-campaign/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/businesses-need-a-full-marketing-service/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/how-does-a-social-media-company-work-in-india/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/why-choose-us-as-your-seo-company-in-india/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/what-is-meta-lattice-how-meta-ranks-your-ads/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/how-professional-video-marketing-services-work/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/page/2/",
+          "text": "2",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/page/3/",
+          "text": "3",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/page/4/",
+          "text": "4",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/page/18/",
+          "text": "18",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digivirus.in",
+          "text": "digiVirus.in",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/privacy-policy/",
+          "text": "Privacy Policy",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/terms-conditions/",
+          "text": "Terms & Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/refund-policy/",
+          "text": "Refund Policy",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://medium.com/@digivirus",
+          "text": "Medium",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.blogger.com/profile/04703655932756115078",
+          "text": "Blogger",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 8,
+      "isOrphan": false,
+      "schemaTypes": [
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Organization",
+        "FAQPage",
+        "WPHeader",
+        "SiteNavigationElement",
+        "Person"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {
+        "title": "Blog - digiVirus",
+        "url": "https://digivirus.in/blog/",
+        "twitterCard": "summary_large_image"
+      },
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 3,
+        "info": 2
+      }
+    },
+    {
+      "url": "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/"
+      ],
+      "finalUrl": "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 227,
+      "sizeBytes": 165506,
+      "title": {
+        "text": "Business Isn’t Getting Leads? Digital Marketing Agency in India! - digiVirus",
+        "length": 76,
+        "status": "too_long"
+      },
+      "metaDescription": {
+        "text": "Spending on marketing but not getting leads? Don’t worry! DIGI VIRUS, India’s top digital marketing service, is here to help you grow.",
+        "length": 134,
+        "status": "ok"
+      },
+      "h1": {
+        "text": [
+          "Are You Getting to Have no Leads? These Strategies Can Help!"
+        ],
+        "count": 1,
+        "status": "ok"
+      },
+      "headings": {
+        "h1": [
+          "Are You Getting to Have no Leads? These Strategies Can Help!"
+        ],
+        "h2": [
+          "Business Isn’t Getting Leads? Digital Marketing Agency in India!",
+          "How Digital Marketing Agencies Help Businesses Get More Leads",
+          "Proven Lead Generation Strategies from digi Virus",
+          "Quick Links",
+          "Services",
+          "Contact Us",
+          "SOCIALS"
+        ],
+        "h3": [
+          "Choosing the Right Digital Marketing Agency in India",
+          "You Might Also Like",
+          "Lead Quality vs. Lead Quantity: What is Best For Business Growth",
+          "Meet T3 Chat AI: Your All-in-One, Super-Fast AI Assistant",
+          "Top 10 Reasons Businesses Trust digiVirus for SEO in India",
+          "Leave a Reply Cancel reply",
+          "Digital Marketing Performance Calculator",
+          "Let’s Talk About Your Project"
+        ],
+        "h4": [
+          "Contact Us Today!",
+          "Social Media Links:InstagramFacebook"
+        ],
+        "h5": [
+          "1. Weak Website & Landing Pages",
+          "2. Poor Social Media Ads",
+          "3. Weak SEO Strategy",
+          "4. No Email Marketing or Follow-ups",
+          "5. No Clear Sales Funnel",
+          "1. Use High-Performing Facebook & Google Ads",
+          "2. SEO-Optimized Content Marketing",
+          "3. Use Chatbots & CRM Automation",
+          "4. Improve Website for More Conversions",
+          "5. Leverage LinkedIn for B2B Leads",
+          "Want More Leads? Let’s Get Started!"
+        ],
+        "h6": [],
+        "issues": [
+          "Heading level skipped: H2 directly followed by H5 (\"1. Weak Website & Landing Pages...\")",
+          "Heading level skipped: H2 directly followed by H5 (\"1. Use High-Performing Facebook & Google...\")",
+          "Heading level skipped: H3 directly followed by H5 (\"Want More Leads? Let’s Get Started!...\")"
+        ]
+      },
+      "images": [
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-1-e1769667506148.webp",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/Navy-Purple-Gradient-Professional-Marketing-Agency-Blog-Banner.png",
+          "alt": "You are currently viewing Business Isn’t Getting Leads? Digital Marketing Agency in India!",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/ChatGPT-Image-Jan-14-2026-11_26_04-AM-300x200.png",
+          "alt": "Read more about the article Lead Quality vs. Lead Quantity: What is Best For Business Growth",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-300x200.jpg",
+          "alt": "Read more about the article Meet T3 Chat AI: Your All-in-One, Super-Fast AI Assistant",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/Top-10-Reasons-Businesses-Trust-digiVirus-for-SEO-in-India-300x200.webp",
+          "alt": "Read more about the article Top 10 Reasons Businesses Trust digiVirus for SEO in India",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/logo-1024x303.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-48.webp",
+          "alt": "MSME certificate",
+          "missingAlt": false,
+          "emptyAlt": false
+        }
+      ],
+      "canonical": {
+        "url": "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      "wordCount": 1015,
+      "textLength": 6798,
+      "textToHtmlRatio": 4.11,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/about-us",
+          "text": "About Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-social-media-marketing-india/",
+          "text": "Social Media Marketing & Branding",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-performance-marketing-agency-in-india/",
+          "text": "Performance Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-lead-generation-agency-in-india/",
+          "text": "Lead Generation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ad-agency-in-india/",
+          "text": "AI Ads Creation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+          "text": "E-Commerce Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+          "text": "AI Ranking & SEO",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+          "text": "Website Development & App Design",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+          "text": "Digital Marketing Audit",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digital-marketing-calculator/",
+          "text": "Labs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/our-case-studies",
+          "text": "Case Study",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact",
+          "text": "Contact Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results/",
+          "text": "Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise/",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact-us",
+          "text": "Contact us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/author/digivirus-secure/",
+          "text": "digivirus.secure",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/category/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/",
+          "text": "0 Comments",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/lead-quality-vs-lead-quantity-what-is-best-for-business-growth/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/meet-t3-chat-ai-your-all-in-one-super-fast-ai-assistant/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/trust-digivirus-for-seo-in-india/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digivirus.in",
+          "text": "digiVirus.in",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/privacy-policy/",
+          "text": "Privacy Policy",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/terms-conditions/",
+          "text": "Terms & Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/refund-policy/",
+          "text": "Refund Policy",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/digivirus.in/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://medium.com/@digivirus",
+          "text": "Medium",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.blogger.com/profile/04703655932756115078",
+          "text": "Blogger",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": true,
+      "schemaTypes": [
+        "Article",
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Person",
+        "Organization",
+        "FAQPage",
+        "WPHeader",
+        "SiteNavigationElement",
+        "WPSideBar"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {
+        "title": "Business Isn’t Getting Leads? Digital Marketing Agency in India! - digiVirus",
+        "description": "Spending on marketing but not getting leads? Don’t worry! DIGI VIRUS, India’s top digital marketing service, is here to help you grow.",
+        "image": "https://digivirus.in/wp-content/uploads/2025/03/Navy-Purple-Gradient-Professional-Marketing-Agency-Blog-Banner.png",
+        "url": "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/",
+        "twitterCard": "summary_large_image"
+      },
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 0,
+        "warning": 2,
+        "info": 3
+      }
+    },
+    {
+      "url": "https://digivirus.in/best-digital-marketing-agency-in-india",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india/"
+      ],
+      "finalUrl": "https://digivirus.in/best-digital-marketing-agency-in-india/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 225,
+      "sizeBytes": 165259,
+      "title": {
+        "text": "Most Business Owners Have No Idea What Digital Marketing Is - digiVirus",
+        "length": 71,
+        "status": "too_long"
+      },
+      "metaDescription": {
+        "text": "Imagine a shop in a busy market with no visitors. That’s what happens when your business isn’t using digital marketing to get noticed!",
+        "length": 134,
+        "status": "ok"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Most Business Owners Have No Idea What Digital Marketing Is",
+          "Here’s Why You Need a Digital Marketing Agency in India to Stay Ahead!",
+          "Traditional Marketing vs. Digital Marketing",
+          "What Makes a Good Website?",
+          "What Happens If You Use Digital Marketing? See How a Top Digital Marketing Agency in India Can Transform Your Business!",
+          "Quick Links",
+          "Services",
+          "Contact Us",
+          "SOCIALS"
+        ],
+        "h3": [
+          "What is Digital Marketing? (And Why Should You Care?)",
+          "Traditional Marketing:",
+          "Digital Marketing:",
+          "Why is Digital Marketing Important for Your Business? Discover How a Leading Digital Marketing Company in India Can Boost Your Growth!",
+          "You Might Also Like",
+          "The Math Behind Premium Pricing: How We Calculate Our Fees Based on Value, Not Hours",
+          "Best Digital Marketing Agency in India",
+          "Best AI Ads Creating Agency in India – digiVirus | AI Video Production Ads",
+          "Leave a Reply Cancel reply",
+          "Digital Marketing Performance Calculator",
+          "Let’s Talk About Your Project"
+        ],
+        "h4": [
+          "The Basics of Digital Marketing (How It Works)",
+          "Effective Content Marketing Strategies:"
+        ],
+        "h5": [
+          "Contact Us Today!"
+        ],
+        "h6": [],
+        "issues": [
+          "Heading level skipped: H2 directly followed by H5 (\"Contact Us Today!...\")"
+        ]
+      },
+      "images": [
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-1-e1769667506148.webp",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/90-of-business-owners-fail-online%E2%80%94Dont-be-one-of-them.png",
+          "alt": "You are currently viewing Most Business Owners Have No Idea What Digital Marketing Is",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/The-Math-Behind-Premium-Pricing-How-We-Calculate-Our-Fees-Based-on-Value-Not-Hours-300x200.webp",
+          "alt": "Read more about the article The Math Behind Premium Pricing: How We Calculate Our Fees Based on Value, Not Hours",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/06/Best-Digital-Marketing-Agency-in-India-300x200.webp",
+          "alt": "Read more about the article Best Digital Marketing Agency in India",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/01/ChatGPT-Image-Jan-7-2026-03_46_18-PM-300x200.jpg",
+          "alt": "Read more about the article Best AI Ads Creating Agency in India – digiVirus | AI Video Production Ads ",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/logo-1024x303.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-48.webp",
+          "alt": "MSME certificate",
+          "missingAlt": false,
+          "emptyAlt": false
+        }
+      ],
+      "canonical": {
+        "url": "https://digivirus.in/best-digital-marketing-agency-in-india/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      "wordCount": 1154,
+      "textLength": 7779,
+      "textToHtmlRatio": 4.71,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/about-us",
+          "text": "About Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-social-media-marketing-india/",
+          "text": "Social Media Marketing & Branding",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-performance-marketing-agency-in-india/",
+          "text": "Performance Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-lead-generation-agency-in-india/",
+          "text": "Lead Generation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ad-agency-in-india/",
+          "text": "AI Ads Creation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+          "text": "E-Commerce Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+          "text": "AI Ranking & SEO",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+          "text": "Website Development & App Design",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+          "text": "Digital Marketing Audit",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digital-marketing-calculator/",
+          "text": "Labs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/our-case-studies",
+          "text": "Case Study",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact",
+          "text": "Contact Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results/",
+          "text": "Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise/",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact-us",
+          "text": "Contact us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/author/digivirus-secure/",
+          "text": "digivirus.secure",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/category/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-agency-in-india/",
+          "text": "0 Comments",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/premium-pricing/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-agency-in-india-3/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ads-creating-agency-in-india-digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digivirus.in",
+          "text": "digiVirus.in",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/privacy-policy/",
+          "text": "Privacy Policy",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/terms-conditions/",
+          "text": "Terms & Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/refund-policy/",
+          "text": "Refund Policy",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/digivirus.in/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://medium.com/@digivirus",
+          "text": "Medium",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.blogger.com/profile/04703655932756115078",
+          "text": "Blogger",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": true,
+      "schemaTypes": [
+        "Article",
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Person",
+        "Organization",
+        "FAQPage",
+        "WPHeader",
+        "SiteNavigationElement",
+        "WPSideBar"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {
+        "title": "Most Business Owners Have No Idea What Digital Marketing Is - digiVirus",
+        "description": "Imagine a shop in a busy market with no visitors. That’s what happens when your business isn’t using digital marketing to get noticed!",
+        "image": "https://digivirus.in/wp-content/uploads/2025/03/90-of-business-owners-fail-online—Dont-be-one-of-them.png",
+        "url": "https://digivirus.in/best-digital-marketing-agency-in-india/",
+        "twitterCard": "summary_large_image"
+      },
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 2,
+        "info": 3
+      }
+    },
+    {
+      "url": "https://digivirus.in/best-digital-marketing-agency-in-india-2",
+      "statusCode": 200,
+      "statusType": "2xx",
+      "redirectChain": [
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2/"
+      ],
+      "finalUrl": "https://digivirus.in/best-digital-marketing-agency-in-india-2/",
+      "contentType": "text/html; charset=UTF-8",
+      "loadTimeMs": 224,
+      "sizeBytes": 161575,
+      "title": {
+        "text": "digiVirus - BEST DIGITAL MARKETING AGENCY IN INDIA - digiVirus",
+        "length": 62,
+        "status": "too_long"
+      },
+      "metaDescription": {
+        "text": "DigiVirus, the best digital marketing agency in India, offers data-driven strategies & expert solutions to boost your brand & online success!",
+        "length": 141,
+        "status": "ok"
+      },
+      "h1": {
+        "text": [],
+        "count": 0,
+        "status": "missing"
+      },
+      "headings": {
+        "h1": [],
+        "h2": [
+          "digiVirus – BEST DIGITAL MARKETING AGENCY IN INDIA",
+          "Quick Links",
+          "Services",
+          "Contact Us",
+          "SOCIALS"
+        ],
+        "h3": [
+          "1. We Strategize as per Your Needs",
+          "2. We Set You Apart from the Competition",
+          "3. Seamless Communication & Transparency",
+          "You Might Also Like",
+          "🔥 Digital Marketing Trends to Watch Out for in 2025",
+          "Why digiVirus Is a Trusted Marketing Agency",
+          "digiVirus Wins India’s Most Trusted SEO Agency Award",
+          "Leave a Reply Cancel reply",
+          "Digital Marketing Performance Calculator",
+          "Let’s Talk About Your Project"
+        ],
+        "h4": [
+          "Contact Us Today!",
+          "Social Media Links:InstagramFacebook"
+        ],
+        "h5": [],
+        "h6": [],
+        "issues": []
+      },
+      "images": [
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-3.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/02/logo-1-e1769667506148.webp",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/blog-banner.png",
+          "alt": "You are currently viewing digiVirus – BEST DIGITAL MARKETING AGENCY IN INDIA",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/05/%F0%9F%94%A5-Digital-Marketing-Trends-to-Watch-Out-for-in-2025-300x200.png",
+          "alt": "Read more about the article 🔥 Digital Marketing Trends to Watch Out for in 2025",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/04/Why-digiVirus-Is-a-Trusted-Marketing-Agency-300x200.webp",
+          "alt": "Read more about the article Why digiVirus Is a Trusted Marketing Agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2026/05/digiVirus_Award_2048x1365-300x200.webp",
+          "alt": "Read more about the article digiVirus Wins India’s Most Trusted SEO Agency Award ",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/03/logo-1024x303.png",
+          "alt": "best digital marketing agency",
+          "missingAlt": false,
+          "emptyAlt": false
+        },
+        {
+          "src": "https://digivirus.in/wp-content/uploads/2025/08/Untitled-design-48.webp",
+          "alt": "MSME certificate",
+          "missingAlt": false,
+          "emptyAlt": false
+        }
+      ],
+      "canonical": {
+        "url": "https://digivirus.in/best-digital-marketing-agency-in-india-2/",
+        "status": "ok"
+      },
+      "robotsMeta": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "nosnippet": false,
+        "raw": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      "wordCount": 823,
+      "textLength": 5593,
+      "textToHtmlRatio": 3.46,
+      "isThinContent": false,
+      "internalLinks": [
+        {
+          "href": "https://digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/about-us",
+          "text": "About Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-social-media-marketing-india/",
+          "text": "Social Media Marketing & Branding",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-performance-marketing-agency-in-india/",
+          "text": "Performance Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-lead-generation-agency-in-india/",
+          "text": "Lead Generation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ad-agency-in-india/",
+          "text": "AI Ads Creation",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+          "text": "E-Commerce Marketing",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+          "text": "AI Ranking & SEO",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+          "text": "Website Development & App Design",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+          "text": "Digital Marketing Audit",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog",
+          "text": "Blogs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digital-marketing-calculator/",
+          "text": "Labs",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/our-case-studies",
+          "text": "Case Study",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact",
+          "text": "Contact Us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/results/",
+          "text": "Results",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/franchise/",
+          "text": "Franchise",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/contact-us",
+          "text": "Contact us",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/author/digivirus-secure/",
+          "text": "digivirus.secure",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/category/blog/",
+          "text": "Blog",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/best-digital-marketing-agency-in-india-2/",
+          "text": "0 Comments",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/%f0%9f%94%a5-digital-marketing-trends-to-watch-out-for-in-2025/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/marketing-agency/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/indias-most-trusted-seo-agency/",
+          "text": "Link (No Anchor)",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/digivirus.in",
+          "text": "digiVirus.in",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/privacy-policy/",
+          "text": "Privacy Policy",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/terms-conditions/",
+          "text": "Terms & Conditions",
+          "isExternal": false
+        },
+        {
+          "href": "https://digivirus.in/refund-policy/",
+          "text": "Refund Policy",
+          "isExternal": false
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Link (No Anchor)",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "social media management",
+          "isExternal": true
+        },
+        {
+          "href": "https://youtube.com/shorts/Y4UVnNNM72c",
+          "text": "https://youtube.com/shorts/Y4UVnNNM72c",
+          "isExternal": true
+        },
+        {
+          "href": "https://youtube.com/shorts/tS2EMpTl5sw?feature=share",
+          "text": "https://youtube.com/shorts/tS2EMpTl5sw?feature=share",
+          "isExternal": true
+        },
+        {
+          "href": "https://youtube.com/shorts/t6SVB4JO2-Y",
+          "text": "https://youtube.com/shorts/t6SVB4JO2-Y",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in/",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/digivirus.in/",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.instagram.com/digivirus.in",
+          "text": "Instagram",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=100094229486937",
+          "text": "Facebook",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.linkedin.com/company/digivirus/",
+          "text": "LinkedIn",
+          "isExternal": true
+        },
+        {
+          "href": "https://medium.com/@digivirus",
+          "text": "Medium",
+          "isExternal": true
+        },
+        {
+          "href": "https://www.blogger.com/profile/04703655932756115078",
+          "text": "Blogger",
+          "isExternal": true
+        }
+      ],
+      "incomingInternalLinksCount": 0,
+      "isOrphan": true,
+      "schemaTypes": [
+        "Article",
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Person",
+        "Organization",
+        "FAQPage",
+        "WPHeader",
+        "SiteNavigationElement",
+        "WPSideBar"
+      ],
+      "hasStructuredData": true,
+      "lang": "en-US",
+      "openGraph": {
+        "title": "digiVirus - BEST DIGITAL MARKETING AGENCY IN INDIA - digiVirus",
+        "description": "DigiVirus, the best digital marketing agency in India, offers data-driven strategies & expert solutions to boost your brand & online success!",
+        "image": "https://digivirus.in/wp-content/uploads/2025/03/blog-banner.png",
+        "url": "https://digivirus.in/best-digital-marketing-agency-in-india-2/",
+        "twitterCard": "summary_large_image"
+      },
+      "htmlDoc": {
+        "hasDoctype": true,
+        "hasLang": true,
+        "hasViewport": true,
+        "charset": "UTF-8",
+        "issues": []
+      },
+      "urlIssues": [],
+      "httpsInfo": {
+        "isHttps": true,
+        "mixedContent": []
+      },
+      "issuesCount": {
+        "critical": 1,
+        "warning": 2,
+        "info": 2
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "passed-http-status",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Crawled Pages Returned Valid Status",
+      "description": "No 4xx, 5xx, or network errors were detected among crawled pages.",
+      "recommendation": "Continue monitoring server logs and internal links regularly.",
+      "affectedPages": []
+    },
+    {
+      "id": "redirect-chains",
+      "category": "Technical",
+      "severity": "warning",
+      "title": "Redirect Chains Detected",
+      "description": "4 URL(s) undergo more than one consecutive redirect before reaching the destination page.",
+      "recommendation": "Update links to point directly to the final destination URL to preserve crawl budget and reduce latency.",
+      "affectedPages": [
+        "https://digivirus.in/blog",
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2"
+      ]
+    },
+    {
+      "id": "passed-https",
+      "category": "Technical",
+      "severity": "passed",
+      "title": "All Pages Use Secure HTTPS",
+      "description": "All crawled pages are securely delivered over HTTPS protocol.",
+      "recommendation": "Ensure SSL/TLS certificates are set to auto-renew.",
+      "affectedPages": []
+    },
+    {
+      "id": "short-title",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Title Tag Too Short (< 30 characters)",
+      "description": "1 page(s) have titles under 30 characters, missing keyword opportunities.",
+      "recommendation": "Expand title tags to between 30 and 60 characters with descriptive primary keywords and brand name.",
+      "affectedPages": [
+        "https://digivirus.in/blog"
+      ]
+    },
+    {
+      "id": "long-title",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Title Tag Too Long (> 60 characters)",
+      "description": "3 page(s) exceed 60 characters and may be truncated in search engine results.",
+      "recommendation": "Keep page titles concise (under 60 characters or ~600px pixel width) so they display completely in SERPs.",
+      "affectedPages": [
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2"
+      ]
+    },
+    {
+      "id": "missing-meta-desc",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Missing Meta Description",
+      "description": "1 page(s) do not define a meta description tag.",
+      "recommendation": "Add compelling meta descriptions (120-155 characters) summarizing the page and enticing search clicks.",
+      "affectedPages": [
+        "https://digivirus.in/blog"
+      ]
+    },
+    {
+      "id": "missing-h1",
+      "category": "On-Page",
+      "severity": "critical",
+      "title": "Missing H1 Heading",
+      "description": "3 page(s) do not contain a primary <h1> heading tag.",
+      "recommendation": "Ensure each page has exactly one prominent <h1> tag communicating the page theme.",
+      "affectedPages": [
+        "https://digivirus.in/blog",
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2"
+      ]
+    },
+    {
+      "id": "heading-hierarchy-skipped",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Heading Hierarchy Levels Skipped",
+      "description": "3 page(s) skip heading levels (e.g., an H1 directly followed by an H4 without intermediate H2/H3).",
+      "recommendation": "Organize headings logically in sequential order (H1 -> H2 -> H3) for accessibility and crawl structure.",
+      "affectedPages": [
+        "https://digivirus.in/",
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india"
+      ]
+    },
+    {
+      "id": "images-missing-alt",
+      "category": "On-Page",
+      "severity": "warning",
+      "title": "Images Missing Descriptive Alt Attribute",
+      "description": "3 image(s) across 1 page(s) are missing descriptive alt text.",
+      "recommendation": "Add meaningful, descriptive alt text to images for image SEO and screen reader accessibility.",
+      "affectedPages": [
+        "https://digivirus.in/"
+      ]
+    },
+    {
+      "id": "missing-open-graph",
+      "category": "On-Page",
+      "severity": "info",
+      "title": "Missing Open Graph Metadata",
+      "description": "1 page(s) lack complete Open Graph tags (og:title or og:image).",
+      "recommendation": "Add og:title, og:description, and og:image tags for rich preview rendering on social platforms.",
+      "affectedPages": [
+        "https://digivirus.in/blog"
+      ]
+    },
+    {
+      "id": "low-text-ratio",
+      "category": "Content",
+      "severity": "info",
+      "title": "Low Text-to-HTML Ratio (< 8%)",
+      "description": "5 page(s) have an excessive ratio of code markup to actual visible readable content.",
+      "recommendation": "Streamline inline CSS/JS and expand primary textual copy.",
+      "affectedPages": [
+        "https://digivirus.in/",
+        "https://digivirus.in/blog",
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2"
+      ]
+    },
+    {
+      "id": "passed-duplicate-content",
+      "category": "Content",
+      "severity": "passed",
+      "title": "No Significant Internal Duplicate Content",
+      "description": "All crawled pages provide unique internal textual content without duplicate overlap.",
+      "recommendation": "Maintain unique copy as new sections are published.",
+      "affectedPages": []
+    },
+    {
+      "id": "passed-broken-links",
+      "category": "Links",
+      "severity": "passed",
+      "title": "Zero Broken Internal Links Found",
+      "description": "All internal links tested across crawled pages resolved successfully.",
+      "recommendation": "Periodically re-crawl to catch any newly created broken URLs.",
+      "affectedPages": []
+    },
+    {
+      "id": "orphan-pages",
+      "category": "Links",
+      "severity": "warning",
+      "title": "Orphan Pages (0 Incoming Internal Links)",
+      "description": "3 discovered page(s) have zero incoming internal links from other crawled pages on your website.",
+      "recommendation": "Add contextual links in main navigation, category pages, or relevant articles pointing to these orphan pages.",
+      "affectedPages": [
+        "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india",
+        "https://digivirus.in/best-digital-marketing-agency-in-india-2"
+      ]
+    },
+    {
+      "id": "passed-robots-txt",
+      "category": "Crawlability",
+      "severity": "passed",
+      "title": "robots.txt Valid and Accessible",
+      "description": "robots.txt is live, accessible, and declares 1 sitemap(s).",
+      "recommendation": "Continue reviewing robots.txt when adding new private areas.",
+      "affectedPages": [
+        "https://digivirus.in/robots.txt"
+      ]
+    },
+    {
+      "id": "passed-sitemap",
+      "category": "Crawlability",
+      "severity": "passed",
+      "title": "XML Sitemap Discovered",
+      "description": "Discovered valid XML sitemap containing 210 indexed URLs.",
+      "recommendation": "Keep sitemap updated automatically via your CMS or build pipeline.",
+      "affectedPages": [
+        "https://digivirus.in/sitemap_index.xml"
+      ]
+    }
+  ],
+  "duplicatePairs": [],
+  "robotsAnalysis": {
+    "exists": true,
+    "url": "https://digivirus.in/robots.txt",
+    "content": "User-agent: GPTBot\r\nAllow: /\r\n\r\nUser-agent: *\r\nAllow: /\r\n\r\n# Block WordPress admin & sensitive pages\r\nDisallow: /wp-admin/\r\nAllow: /wp-admin/admin-ajax.php\r\nDisallow: /checkout/\r\nDisallow: /my-account/\r\nDisallow: /addons/\r\nDisallow: /track-order/\r\nDisallow: /*add-to-cart=*\r\nDisallow: /?s=\r\n\r\n# Your sitemap\r\nSitemap: https://digivirus.in/sitemap_index.xml\r\n",
+    "sitemaps": [
+      "https://digivirus.in/sitemap_index.xml"
+    ],
+    "blockedPaths": [
+      "/wp-admin/",
+      "/checkout/",
+      "/my-account/",
+      "/addons/",
+      "/track-order/",
+      "/*add-to-cart=*",
+      "/?s="
+    ],
+    "issues": []
+  },
+  "sitemapAnalysis": {
+    "exists": true,
+    "url": "https://digivirus.in/sitemap_index.xml",
+    "totalUrls": 210,
+    "urls": [
+      "https://digivirus.in/blog/",
+      "https://digivirus.in/business-isnt-getting-leads-digital-marketing-agency-in-india/",
+      "https://digivirus.in/best-digital-marketing-agency-in-india/",
+      "https://digivirus.in/best-digital-marketing-agency-in-india-2/",
+      "https://digivirus.in/metas-big-update-financial-ads-ad-agency-in-india/",
+      "https://digivirus.in/how-to-make-a-ghibli-photo-for-free/",
+      "https://digivirus.in/grok-ai-vs-chat-gpt-which-one-is-better-in-2025/",
+      "https://digivirus.in/the-power-of-social-media-marketing-is-it-worth-it/",
+      "https://digivirus.in/ai-vs-human-content-creativity/",
+      "https://digivirus.in/email-marketing-still-a-game-changer/",
+      "https://digivirus.in/ai-comments-instagram-meta-update/",
+      "https://digivirus.in/quick-commerce-the-new-trend/",
+      "https://digivirus.in/meta-ads-main-character-of-digital-marketing/",
+      "https://digivirus.in/how-to-use-whatsapp-for-marketing/",
+      "https://digivirus.in/what-is-seo/",
+      "https://digivirus.in/what-is-digital-marketing-a-beginners-guide/",
+      "https://digivirus.in/why-digital-marketing-is-the-backbone-of-modern-business-success/",
+      "https://digivirus.in/top-digital-marketing-trends-dominating-2025/",
+      "https://digivirus.in/local-seo-guide-how-to-rank-in-google-maps/",
+      "https://digivirus.in/%f0%9f%a4%96-artificial-intelligence-shaping-the-future-of-our-world/",
+      "https://digivirus.in/voice-search-optimization-the-next-seo-game-changer/",
+      "https://digivirus.in/marketing-automation-vs-manual-campaigns/",
+      "https://digivirus.in/%f0%9f%94%a5-digital-marketing-trends-to-watch-out-for-in-2025/",
+      "https://digivirus.in/facebook-ads-vs-google-ads-where-should-you-spend-in-2025/",
+      "https://digivirus.in/paid-vs-organic-marketing-which-is-better/",
+      "https://digivirus.in/promoting-your-business-through-rwas-in-agra-a-full-guide-for-local-businesses/",
+      "https://digivirus.in/meta-ads-upcoming-updates-what-advertisers-need-to-know-in-2025/",
+      "https://digivirus.in/dhruv-rathee-launches-ai-fiesta-indias-first-multi-ai-platform/",
+      "https://digivirus.in/chatgpt-go-openais-affordable-ai-subscription-for-india/",
+      "https://digivirus.in/meet-t3-chat-ai-your-all-in-one-super-fast-ai-assistant/",
+      "https://digivirus.in/nano-banana-the-future-of-image-editing-with-gemini-ai/",
+      "https://digivirus.in/linkedin-ads-a-complete-guide-for-businesses/",
+      "https://digivirus.in/unlocking-the-power-of-google-data-studio-looker-studio/",
+      "https://digivirus.in/exploring-google-ai-studio-making-ai-simple-for-everyone/",
+      "https://digivirus.in/youtube-new-collaboration-feature-more-reach-for-all-creators/",
+      "https://digivirus.in/why-linkedin-ads-should-be-part-of-your-growth-strategy/",
+      "https://digivirus.in/why-snapchat-ads-could-be-your-brands-secret-weapon/",
+      "https://digivirus.in/what-is-dominance-of-ai/",
+      "https://digivirus.in/what-are-the-effects-of-ai-on-digital-marketing/",
+      "https://digivirus.in/why-chatgpt-and-half-the-internet-broke-today/",
+      "https://digivirus.in/chat-gpt-go-now-free-for-one-year-in-india/",
+      "https://digivirus.in/introducing-pomelli-googles-revolutionary-ai-tool-transforming-marketing-campaigns/",
+      "https://digivirus.in/what-is-meta-andromeda/",
+      "https://digivirus.in/physics-wallahs-authentic-approach-outpaced-big-edtech-rivals/",
+      "https://digivirus.in/what-is-the-metaverse/",
+      "https://digivirus.in/what-is-omnichannel-marketing/",
+      "https://digivirus.in/common-google-business-profile-headaches/",
+      "https://digivirus.in/artificial-intelligence-is-transforming-digital-marketing-strategies/",
+      "https://digivirus.in/how-to-recover-meta-ads-banned-account/",
+      "https://digivirus.in/what-is-a-payment-gateway-how-it-supports-online-businesses/",
+      "https://digivirus.in/how-to-enhance-website-ranking-on-search-engine-result-pages/",
+      "https://digivirus.in/how-metas-gem-is-transforming-the-way-ai-recommends-ads/",
+      "https://digivirus.in/what-is-meta-pixel-a-beginners-guide-for-ads-manager/",
+      "https://digivirus.in/difference-between-google-core-update-algorithm-update/",
+      "https://digivirus.in/top-social-media-calendar-tools-to-plan-schedule-and-grow/",
+      "https://digivirus.in/change-your-gmail-address-without-losing-your-account/",
+      "https://digivirus.in/how-andromeda-selects-ads-and-why-it-matters-for-paid-marketing/",
+      "https://digivirus.in/domain-name-vs-hosting-whats-the-difference/",
+      "https://digivirus.in/what-is-dropshipping-a-smart-way-to-test-new-markets/",
+      "https://digivirus.in/are-you-struggling-to-understand-your-customers-pain-points/",
+      "https://digivirus.in/tiktok-india-2025-revival-rumors-regulatory-realities-market-landscape/",
+      "https://digivirus.in/what-is-manychat-and-how-it-can-help-your-business-grow/",
+      "https://digivirus.in/how-fake-leads-are-killing-your-sales/",
+      "https://digivirus.in/in-house-team-vs-digivirus-marketing-agency/",
+      "https://digivirus.in/hiring-a-cheap-digital-marketer/",
+      "https://digivirus.in/why-your-marketing-agency-is-not-delivering-results/",
+      "https://digivirus.in/boosting-posts-vs-running-ads/",
+      "https://digivirus.in/best-digital-marketing-agency-for-pr/",
+      "https://digivirus.in/digivirus-vs-other-agencies/",
+      "https://digivirus.in/ai-summit-impact-2026/",
+      "https://digivirus.in/brands-call-digivirus-indias-best-ai-ads-agency/",
+      "https://digivirus.in/top-digital-marketing-mistakes-business-owners-make/",
+      "https://digivirus.in/digital-marketing-doesnt-work-for-your-company/",
+      "https://digivirus.in/facebook-ads-vs-google-ads/",
+      "https://digivirus.in/reddit-recommend-digivirus/",
+      "https://digivirus.in/why-your-ads-are-getting-leads-but-no-sales/",
+      "https://digivirus.in/digital-marketing-agency-for-gov/",
+      "https://digivirus.in/ani-highlights-the-digivirus/",
+      "https://digivirus.in/increase-monthly-revenue/",
+      "https://digivirus.in/ai-content-creation-agency-in-india/",
+      "https://digivirus.in/ads-in-chatgpt-results-ai-ads-agency/",
+      "https://digivirus.in/ai-voice-over-videos-agency/",
+      "https://digivirus.in/ai-performance-marketing-agency/",
+      "https://digivirus.in/top-digital-marketing-agency-in-india-2026/",
+      "https://digivirus.in/adani-is-switching-to-ai-ads/",
+      "https://digivirus.in/switch-to-ai-ads/",
+      "https://digivirus.in/digital-marketing-agency-for-us-businesses/",
+      "https://digivirus.in/ai-creative-agency/",
+      "https://digivirus.in/ai-marketing-agency-in-india/",
+      "https://digivirus.in/best-digital-marketing-agency-in-india-for-us-business/",
+      "https://digivirus.in/lead-quality-vs-lead-quantity-what-is-best-for-business-growth/",
+      "https://digivirus.in/why-facebook-leads-are-cheaper-than-google-leads/",
+      "https://digivirus.in/how-to-do-digital-marketing-for-business-in-2026/",
+      "https://digivirus.in/10-essential-tips-for-consistent-and-engaging-online-activity/",
+      "https://digivirus.in/top-social-media-mistakes-brands-make-in-inbound-marketing/",
+      "https://digivirus.in/real-estate-businesses/",
+      "https://digivirus.in/why-most-indian-businesses-fail/",
+      "https://digivirus.in/meta-ads-update/",
+      "https://digivirus.in/doctors-clinics/",
+      "https://digivirus.in/coaching-institute/",
+      "https://digivirus.in/claude-ai/",
+      "https://digivirus.in/digital-marketing-strategy/",
+      "https://digivirus.in/chatgpt-5-4/",
+      "https://digivirus.in/calculate-roi/",
+      "https://digivirus.in/digital-marketing-agency/",
+      "https://digivirus.in/google-is-using-gemini-ai/",
+      "https://digivirus.in/current-world-war-crisis/",
+      "https://digivirus.in/best-ai-ads-agency-in-india-digivirus/",
+      "https://digivirus.in/best-ai-ads-creating-agency-in-india-digivirus/",
+      "https://digivirus.in/marketing-calculator/",
+      "https://digivirus.in/ai-ads-agency-in-india/",
+      "https://digivirus.in/marketing-vs-marketing-agency/",
+      "https://digivirus.in/call-only-google-ads-deprecated/",
+      "https://digivirus.in/how-to-generate-high-quality-leads/",
+      "https://digivirus.in/ai-branding-agency-in-india-digivirus/",
+      "https://digivirus.in/ai-product-shoot-agency-in-india/",
+      "https://digivirus.in/how-lenskart-became-indias-leading-eyewear-brand/",
+      "https://digivirus.in/how-meta-ads-can-help-to-grow-your-business/",
+      "https://digivirus.in/marketing-agency/",
+      "https://digivirus.in/claude-ai-and-chatgpt/",
+      "https://digivirus.in/ai-ads-creation-agency/",
+      "https://digivirus.in/visual-ai-attention/",
+      "https://digivirus.in/1-campaign-10000-ai-variants/",
+      "https://digivirus.in/responsiblcopyright-free/",
+      "https://digivirus.in/change-businesses-in-india/",
+      "https://digivirus.in/white-label-seo-services/",
+      "https://digivirus.in/best-rated-digital-marketing-agency/",
+      "https://digivirus.in/seo-for-usa/",
+      "https://digivirus.in/best-social-media-agencies/",
+      "https://digivirus.in/top-digital-marketing-agency/",
+      "https://digivirus.in/digital-marketing-agency-in-uae/",
+      "https://digivirus.in/best-digital-marketing-agency-in-canada/",
+      "https://digivirus.in/lead-generation-agency-in-india/",
+      "https://digivirus.in/indias-most-trusted-seo-agency/",
+      "https://digivirus.in/trust-digivirus-for-seo-in-india/",
+      "https://digivirus.in/best-digital-marketing-agency-in-india-3/",
+      "https://digivirus.in/best-performance-marketing-agency/",
+      "https://digivirus.in/ecommerce-marketing-agency/",
+      "https://digivirus.in/best-ai-ranking-and-seo-agency-in-india/",
+      "https://digivirus.in/website-development-agency/",
+      "https://digivirus.in/best-digital-marketing-audit-providers-in-india/",
+      "https://digivirus.in/online-presence-in-a-declining-market/",
+      "https://digivirus.in/fitness-content-at-decathlon/",
+      "https://digivirus.in/why-your-in-house-marketing-team-is-failing/",
+      "https://digivirus.in/we-dont-sell-packages-why-digital-growth-cannot-be-linear/",
+      "https://digivirus.in/premium-pricing/",
+      "https://digivirus.in/hiring-a-digital-partner/",
+      "https://digivirus.in/why-we-carefully-select-every-client/",
+      "https://digivirus.in/sleen-india-in-vietnam/",
+      "https://digivirus.in/social-media-marketing/",
+      "https://digivirus.in/global-digital-marketing-agency/",
+      "https://digivirus.in/digivirus-earned-this-prestigious-honor/",
+      "https://digivirus.in/social-media/",
+      "https://digivirus.in/strong-social-media-strategy/",
+      "https://digivirus.in/branding-agency/",
+      "https://digivirus.in/social-media-ads-for-starbucks/",
+      "https://digivirus.in/social-media-ads-for-mcdonalds/",
+      "https://digivirus.in/social-media-brands/",
+      "https://digivirus.in/best-creative-branding-agency/",
+      "https://digivirus.in/top-social-media-agency-to-scale-your-businesses/",
+      "https://digivirus.in/how-professional-video-marketing-services-work/",
+      "https://digivirus.in/what-is-meta-lattice-how-meta-ranks-your-ads/",
+      "https://digivirus.in/how-does-a-social-media-company-work-in-india/",
+      "https://digivirus.in/why-choose-us-as-your-seo-company-in-india/",
+      "https://digivirus.in/businesses-need-a-full-marketing-service/",
+      "https://digivirus.in/best-ai-ads-agency-in-india/",
+      "https://digivirus.in/what-is-email-marketing-a-complete-guide-with-proven-strategies/",
+      "https://digivirus.in/what-is-a-chatgpt-ad-campaign-how-to-run-chatgpt-ad-campaign/",
+      "https://digivirus.in/best-digital-marketing-agency-for-chatgpt-ads-in-india/",
+      "https://digivirus.in/chatgpt-ads-vs-meta-ads-vs-google-ads-which-is-better/",
+      "https://digivirus.in/digivirus-different-from-other-agencies/",
+      "https://digivirus.in/gpt-6-astra-what-is-it-and-how-is-it-changing-ai/",
+      "https://digivirus.in/muse-ai-explained-how-it-works-what-businesses-need-to-know/",
+      "https://digivirus.in/",
+      "https://digivirus.in/coming-soon/",
+      "https://digivirus.in/my-account/",
+      "https://digivirus.in/terms-conditions/",
+      "https://digivirus.in/privacy-policy/",
+      "https://digivirus.in/refund-policy/",
+      "https://digivirus.in/thank-you/",
+      "https://digivirus.in/lms-page/",
+      "https://digivirus.in/thank-you-for-registered-business-owner-webinar/",
+      "https://digivirus.in/about-us/",
+      "https://digivirus.in/franchise/",
+      "https://digivirus.in/our-case-studies/",
+      "https://digivirus.in/digital-marketing-calculator/",
+      "https://digivirus.in/contact-us/",
+      "https://digivirus.in/results/",
+      "https://digivirus.in/best-social-media-marketing-india/",
+      "https://digivirus.in/best-performance-marketing-agency-in-india/",
+      "https://digivirus.in/best-lead-generation-agency-in-india/",
+      "https://digivirus.in/best-ai-ad-agency-in-india/",
+      "https://digivirus.in/best-ecommerce-marketplace-agency-in-india/",
+      "https://digivirus.in/best-ai-ranking-seo-agency-in-india/",
+      "https://digivirus.in/best-website-development-app-design-agency-in-india/",
+      "https://digivirus.in/best-digital-marketing-audit-agency-in-india/",
+      "https://digivirus.in/digivirus-chatgpt-ads-landing-page/",
+      "https://digivirus.in/portfolio/",
+      "https://digivirus.in/portfolio/digivirus-scaled-warehouse-gift/",
+      "https://digivirus.in/portfolio/digivirus-scaled-real-estate-brand/",
+      "https://digivirus.in/portfolio/digivirus-scaled-a-manufacturing-brand/",
+      "https://digivirus.in/portfolio/digivirus-scaled-a-regional-snack-brand/",
+      "https://digivirus.in/portfolio/social-media-branding/",
+      "https://digivirus.in/portfolio/digivirus-boosted-smotect-azaadi/",
+      "https://digivirus.in/?oceanwp_library=popup-template",
+      "https://digivirus.in/?oceanwp_library=logo-slider",
+      "https://digivirus.in/?oceanwp_library=blog-archive-first-section",
+      "https://digivirus.in/?oceanwp_library=loader",
+      "https://digivirus.in/?oceanwp_library=header",
+      "https://digivirus.in/category/blog/"
+    ],
+    "errors": [],
+    "redirected": [],
+    "unreachableUrls": []
+  },
+  "brokenLinks": [],
+  "externalDomainsCount": 6,
+  "totalExternalLinksCount": 10
+}

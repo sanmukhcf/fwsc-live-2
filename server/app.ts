@@ -122,13 +122,28 @@ export function createExpressApp(): express.Express {
 
     if (wantsStream) {
       res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
-      res.setHeader('Transfer-Encoding', 'chunked');
       res.setHeader('Cache-Control', 'no-cache, no-transform');
       res.setHeader('X-Accel-Buffering', 'no');
+      res.setHeader('Connection', 'keep-alive');
+
+      if (typeof (res as any).flushHeaders === 'function') {
+        try {
+          (res as any).flushHeaders();
+        } catch {
+          // Non-fatal
+        }
+      }
 
       const sendChunk = (data: any) => {
         if (!res.writableEnded) {
-          res.write(JSON.stringify(data) + '\n');
+          try {
+            res.write(JSON.stringify(data) + '\n');
+            if (typeof (res as any).flush === 'function') {
+              (res as any).flush();
+            }
+          } catch (e) {
+            console.warn('Failed writing stream chunk:', e);
+          }
         }
       };
 

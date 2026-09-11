@@ -36,7 +36,7 @@ export class SitemapParser {
 
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        const timeoutId = setTimeout(() => controller.abort(), 4000);
 
         const response = await fetch(sitemapUrl, {
           signal: controller.signal,
@@ -70,28 +70,37 @@ export class SitemapParser {
         const nestedSitemaps: string[] = [];
         for (const match of sitemapIndexMatches) {
           const loc = match[1]?.trim();
-          if (loc && !visitedSitemaps.has(loc) && nestedSitemaps.length < 5) {
+          if (loc && !visitedSitemaps.has(loc) && nestedSitemaps.length < 4) {
             nestedSitemaps.push(loc);
           }
         }
 
-        // Recursively fetch top nested sitemaps if index
-        for (const nested of nestedSitemaps) {
-          try {
-            const nestedRes = await fetch(nested, {
-              headers: { 'User-Agent': 'DigiVirusBot/1.0' },
-            });
-            if (nestedRes.ok) {
-              const nestedText = await nestedRes.text();
-              const urlMatches = nestedText.matchAll(/<url>[\s\S]*?<loc>(.*?)<\/loc>[\s\S]*?<\/url>/gi);
-              for (const uMatch of urlMatches) {
-                const loc = uMatch[1]?.trim();
-                if (loc) discoveredUrls.add(loc);
+        // Fetch top nested sitemaps in parallel if index (with 3s timeout)
+        if (nestedSitemaps.length > 0) {
+          await Promise.allSettled(
+            nestedSitemaps.map(async (nested) => {
+              try {
+                const nestedCtrl = new AbortController();
+                const nestedTimer = setTimeout(() => nestedCtrl.abort(), 3000);
+                const nestedRes = await fetch(nested, {
+                  signal: nestedCtrl.signal,
+                  headers: { 'User-Agent': CRAWLER_USER_AGENT },
+                });
+                clearTimeout(nestedTimer);
+
+                if (nestedRes.ok) {
+                  const nestedText = await nestedRes.text();
+                  const urlMatches = nestedText.matchAll(/<url>[\s\S]*?<loc>(.*?)<\/loc>[\s\S]*?<\/url>/gi);
+                  for (const uMatch of urlMatches) {
+                    const loc = uMatch[1]?.trim();
+                    if (loc) discoveredUrls.add(loc);
+                  }
+                }
+              } catch {
+                result.unreachableUrls.push(nested);
               }
-            }
-          } catch {
-            result.unreachableUrls.push(nested);
-          }
+            })
+          );
         }
 
         // Extract regular URLs
@@ -101,8 +110,8 @@ export class SitemapParser {
           if (loc) discoveredUrls.add(loc);
         }
 
-        // If we found URLs, we don't need to try remaining default fallback candidates
-        if (discoveredUrls.size > 0) {
+        // If we found URLs or a valid sitemap, don't waste time trying fallback URLs
+        if (discoveredUrls.size > 0 || result.exists) {
           break;
         }
       } catch (err: any) {

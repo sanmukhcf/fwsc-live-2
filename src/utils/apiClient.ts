@@ -57,20 +57,37 @@ export async function streamAuditCrawl(
           ? 'Audit API route was not found (HTTP 404). Please verify API deployment.'
           : `Server returned HTTP ${res.status} (${res.statusText || 'Error'})`;
 
-      const errorMsg = formatErrorMessage(
+      let errorMsg = formatErrorMessage(
         errJson?.error || errJson?.message || errJson,
         defaultError
       );
 
       const rawDetails = errJson?.errorDetails || {};
+      const isProxy500 =
+        res.status === 500 &&
+        (!errJson?.errorDetails ||
+          errorMsg.toLowerCase().includes('server error has occurred') ||
+          errorMsg.toLowerCase().includes('function_invocation'));
+
+      if (isProxy500) {
+        errorMsg = 'The audit backend experienced a temporary timeout or connection limit. Please try again with a fast 5-page crawl.';
+      }
+
       const details: AuditErrorDetails = {
-        type: (rawDetails.type as any) || 'crawl_error',
-        errorType: safeString(rawDetails.errorType || errJson?.errorType, `HTTP Error ${res.status}`),
-        reason: safeString(rawDetails.reason || errJson?.reason || errJson?.code, `HTTP_${res.status}`),
+        type: isProxy500 ? 'service_timeout' : ((rawDetails.type as any) || 'crawl_error'),
+        errorType: safeString(
+          isProxy500 ? 'Audit Service Timeout' : (rawDetails.errorType || errJson?.errorType),
+          `HTTP Error ${res.status}`
+        ),
+        reason: safeString(
+          isProxy500 ? 'SERVICE_GATEWAY_TIMEOUT' : (rawDetails.reason || errJson?.reason || errJson?.code),
+          `HTTP_${res.status}`
+        ),
         message: safeString(rawDetails.message || errorMsg, errorMsg),
         url: safeString(rawDetails.url || targetUrl, targetUrl),
         statusCode: typeof rawDetails.statusCode === 'number' ? rawDetails.statusCode : res.status,
-        canRetry: rawDetails.canRetry !== false,
+        isServiceError: isProxy500 || rawDetails.isServiceError,
+        canRetry: true,
       };
 
       callbacks.onError(errorMsg, details);

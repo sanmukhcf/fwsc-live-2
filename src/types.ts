@@ -202,12 +202,14 @@ export interface AuditErrorDetails {
     | 'server_error'
     | 'http_error'
     | 'redirect_loop'
+    | 'service_timeout'
     | 'crawl_error';
   errorType: string;
   reason: string;
   message: string;
   url: string;
   statusCode?: number;
+  isServiceError?: boolean;
   rateLimitInfo?: {
     pagesAnalyzed: number;
     pagesRateLimited: number;

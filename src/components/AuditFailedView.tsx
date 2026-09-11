@@ -18,7 +18,19 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
   onRetry,
   onReset,
 }) => {
+  const isServiceError = Boolean(
+    errorDetails?.isServiceError ||
+    errorDetails?.type === 'service_timeout' ||
+    errorDetails?.reason === 'SERVERLESS_HANDLER_ERROR' ||
+    errorDetails?.reason === 'SERVICE_GATEWAY_TIMEOUT' ||
+    errorDetails?.errorType?.includes('Audit Service') ||
+    errorMessage?.toLowerCase().includes('server error has occurred')
+  );
+
   const getFailureBadge = () => {
+    if (isServiceError) {
+      return { label: 'Audit Gateway / Service Timeout', color: 'bg-amber-100 text-amber-800 border-amber-200' };
+    }
     if (errorDetails?.reason === 'NXDOMAIN' || errorDetails?.reason === 'ENOTFOUND') {
       return { label: 'Domain Not Found (NXDOMAIN)', color: 'bg-red-100 text-red-700 border-red-200' };
     }
@@ -110,6 +122,14 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
               <span className="text-[#111111] font-semibold">{safeString(url)}</span>
             </div>
             <div>
+              <span className="text-[#888888]">Origin: </span>
+              {isServiceError ? (
+                <span className="text-amber-800 font-semibold">Audit Gateway / Cloud Function</span>
+              ) : (
+                <span className="text-[#111111] font-semibold">Target Website Host</span>
+              )}
+            </div>
+            <div>
               <span className="text-[#888888]">Status / Code: </span>
               <span className="text-red-700 font-semibold">{safeString(errorDetails?.reason, 'CRAWL_INTERRUPTED')}</span>
             </div>
@@ -128,7 +148,9 @@ export const AuditFailedView: React.FC<AuditFailedViewProps> = ({
           <div className="pt-2 border-t border-[#EAEAEA] flex items-center gap-1.5 text-[#666666]">
             <HelpCircle className="w-3.5 h-3.5 text-[#F29627] shrink-0" />
             <span>
-              Tip: Verify domain spelling, ensure the website server is online, and check that firewall or rate-limiting rules allow crawler connections.
+              {isServiceError
+                ? 'Tip: The audit engine safely handled a serverless execution budget. Try running a fast audit with 5 pages for maximum speed.'
+                : 'Tip: Verify domain spelling, ensure the website server is online, and check that firewall or rate-limiting rules allow crawler connections.'}
             </span>
           </div>
         </div>

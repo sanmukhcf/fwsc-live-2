@@ -145,7 +145,7 @@ export class CrawlerEngine {
 
         while (attempt < maxAttempts) {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 12000);
+          const timeoutId = setTimeout(() => controller.abort(), 6000);
 
           try {
             res = await fetch(currentCheckUrl, {
@@ -393,8 +393,11 @@ export class CrawlerEngine {
       const pageTexts: Array<{ url: string; text: string }> = [];
       let consecutiveRateLimits = 0;
       let totalRateLimitedPages = 0;
-      let crawlDelayMs = 250;
+      let crawlDelayMs = 80;
       let isPartialCrawl = false;
+      const engineStartTime = Date.now();
+      // On Vercel Hobby serverless, functions are killed at 10s; complete safely well before that
+      const MAX_TOTAL_AUDIT_MS = process.env.VERCEL ? 8200 : 45000;
 
       emit('crawling', 'Starting website crawl...', queue.discoveredCount, 0, this.targetUrl, 30, {
         message: 'Beginning deep page crawling and DOM analysis',
@@ -402,6 +405,15 @@ export class CrawlerEngine {
       });
 
     while (queue.hasNext() && !this.isCancelled) {
+      // Check execution time budget to ensure complete report is sent before serverless timeout
+      if (Date.now() - engineStartTime > MAX_TOTAL_AUDIT_MS && crawledPages.length >= 1) {
+        emit('crawling', `Serverless time budget reached. Finalizing report with ${crawledPages.length} analyzed page(s)...`, queue.discoveredCount, crawledPages.length, this.targetUrl, 72, {
+          message: `Reached safe execution budget. Wrapping up audit and generating full report for ${crawledPages.length} analyzed page(s).`,
+          type: 'info',
+        });
+        break;
+      }
+
       const currentUrl = queue.next();
       if (!currentUrl) break;
 
@@ -461,7 +473,7 @@ export class CrawlerEngine {
       try {
         const fetchStart = Date.now();
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 12000);
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
         let response = await fetch(currentUrl, {
           signal: controller.signal,
@@ -484,7 +496,7 @@ export class CrawlerEngine {
           await new Promise(resolve => setTimeout(resolve, retryAfterMs));
 
           const retryController = new AbortController();
-          const retryTimeoutId = setTimeout(() => retryController.abort(), 12000);
+          const retryTimeoutId = setTimeout(() => retryController.abort(), 4000);
           try {
             const retryRes = await fetch(currentUrl, {
               signal: retryController.signal,
